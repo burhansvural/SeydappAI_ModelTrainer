@@ -1,0 +1,1 @@
+# src/ui/model_egit.py  --- İçeriği Yazılacak ---

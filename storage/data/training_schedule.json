@@ -1,0 +1,12 @@
+{
+  "training_interval_hours": 2,
+  "knowledge_threshold": 5,
+  "auto_research_topics": [
+    "python machine learning",
+    "pytorch optimization",
+    "transformer fine-tuning",
+    "neural network training"
+  ],
+  "last_check": null,
+  "next_training": null
+}

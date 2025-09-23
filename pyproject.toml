@@ -1,0 +1,72 @@
+# Bu dosyanın tamamını kopyalayıp mevcut pyproject.toml dosyanızın üzerine yapıştırın.
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seydappai-modeltrainer"
+version = "1.0.0"
+description = "StarCoder2 conversation training toolkit"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+  { name="SeydappAI Takımı", email="contact@example.com" }, # email'i kendinize göre değiştirin
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Projenin çalışması için zorunlu olan ana bağımlılıklar
+# requirements.txt'deki Core ML, UI ve Utilities bölümlerini içerir.
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.35.0",
+    "peft>=0.5.0",
+    "bitsandbytes>=0.41.0",
+    "accelerate>=0.23.0",
+    "datasets>=2.14.0",
+    "flet>=0.28.3",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.65.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+]
+
+# İsteğe bağlı bağımlılık grupları
+[project.optional-dependencies]
+# Geliştirme ortamı için gerekli araçlar
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+]
+# GPU'ya özel optimizasyonlar için (isteğe bağlı)
+gpu = ["flash-attn>=2.0.0"]
+
+# Komut satırı script'i (giriş noktası)
+# Dizin yapınıza göre src/ui/model_egit_ui.py dosyasında main_ft() fonksiyonu olmalı
+[project.scripts]
+seydappai-trainer = "src.ui.model_egit_ui:main_ft"
+
+# Proje linkleri (isteğe bağlı ama önerilir)
+[project.urls]
+Homepage = "https://github.com/your-username/SeydappAI_ModelTrainer" # Kendi GitHub linkinizle değiştirin
+"Bug Tracker" = "https://github.com/your-username/SeydappAI_ModelTrainer/issues"
+
+# Ayar araçları
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

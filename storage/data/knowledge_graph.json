@@ -1,0 +1,80 @@
+{
+  "LANG:python": {
+    "occurrences": 27,
+    "connections": [],
+    "metadata": {
+      "type": [
+        "LANG",
+        "python"
+      ],
+      "name": "python",
+      "last_updated": "2025-09-01T21:48:19.480372",
+      "confidence": 0.85
+    }
+  },
+  "CONCEPT:async": {
+    "occurrences": 6,
+    "connections": [],
+    "metadata": {
+      "type": [
+        "CONCEPT",
+        "async"
+      ],
+      "name": "async",
+      "last_updated": "2025-08-31T22:57:35.066898",
+      "confidence": 0.85
+    }
+  },
+  "CONCEPT:machine learning": {
+    "occurrences": 6,
+    "connections": [],
+    "metadata": {
+      "type": [
+        "CONCEPT",
+        "machine learning"
+      ],
+      "name": "machine learning",
+      "last_updated": "2025-09-01T21:48:10.221964",
+      "confidence": 0.85
+    }
+  },
+  "FRAMEWORK:pytorch": {
+    "occurrences": 6,
+    "connections": [],
+    "metadata": {
+      "type": [
+        "FRAMEWORK",
+        "pytorch"
+      ],
+      "name": "pytorch",
+      "last_updated": "2025-09-01T21:48:13.764584",
+      "confidence": 0.85
+    }
+  },
+  "CONCEPT:neural network": {
+    "occurrences": 6,
+    "connections": [],
+    "metadata": {
+      "type": [
+        "CONCEPT",
+        "neural network"
+      ],
+      "name": "neural network",
+      "last_updated": "2025-09-01T21:48:19.480413",
+      "confidence": 0.85
+    }
+  },
+  "CONCEPT:training": {
+    "occurrences": 6,
+    "connections": [],
+    "metadata": {
+      "type": [
+        "CONCEPT",
+        "training"
+      ],
+      "name": "training",
+      "last_updated": "2025-09-01T21:48:19.480422",
+      "confidence": 0.85
+    }
+  }
+}

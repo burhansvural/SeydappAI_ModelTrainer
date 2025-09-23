@@ -1,0 +1,208 @@
+# src/models/memory/cleanup_utils.py
+"""
+GPU Cleanup Utilities
+Enhanced cleanup following PyTorch best practices[1]
+"""
+import torch
+import gc
+import os
+import logging
+import ctypes
+import ctypes.util
+from typing import List, Any
+
+logger = logging.getLogger(__name__)
+
+
+def safe_gpu_cleanup(*objects) -> bool:
+    """
+    Safe GPU cleanup - conservative approach
+    Args:
+        *objects: Objects to clean up (models, tensors, etc.)
+    Returns:
+        bool: Success status
+    """
+    logger.info("🛡️ Starting safe GPU cleanup")
+
+    try:
+        # Delete provided objects
+        for obj in objects:
+            if obj is not None:
+                del obj
+
+        # Python garbage collection
+        collected = gc.collect()
+        logger.debug(f"🧹 GC collected {collected} objects")
+
+        # CUDA cache cleanup
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            torch.cuda.synchronize()
+
+        logger.info("✅ Safe GPU cleanup completed")
+        return True
+
+    except Exception as e:
+        logger.error(f"❌ Safe cleanup failed: {e}")
+        return False
+
+
+def enhanced_gpu_cleanup() -> bool:
+    """
+    Enhanced GPU cleanup with CUDA context reset
+    More aggressive but potentially risky cleanup
+    """
+    logger.info("🧹 Starting enhanced GPU cleanup")
+
+    try:
+        # Stage 1: Basic cleanup
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+
+            # Multiple cache clear passes
+            for i in range(3):
+                torch.cuda.empty_cache()
+                logger.debug(f"🧹 Cache clear pass #{i + 1}")
+
+        # Stage 2: Aggressive garbage collection
+        for cycle in range(5):
+            collected = gc.collect()
+            logger.debug(f"🧹 GC cycle #{cycle + 1}: {collected} objects")
+
+        # Stage 3: CUDA context reset (risky but effective)
+        cuda_reset_success = _attempt_cuda_reset()
+
+        # Stage 4: Validation
+        if torch.cuda.is_available():
+            allocated_after = torch.cuda.memory_allocated(0) / 1024 ** 2  # MB
+            logger.info(f"📊 Memory after cleanup: {allocated_after:.1f}MB")
+
+            success = allocated_after < 100  # Less than 100MB is good
+        else:
+            success = True
+
+        logger.info(f"✅ Enhanced cleanup {'successful' if success else 'partial'}")
+        return success
+
+    except Exception as e:
+        logger.error(f"❌ Enhanced cleanup failed: {e}")
+        # Fallback to safe cleanup
+        return safe_gpu_cleanup()
+
+
+def _attempt_cuda_reset() -> bool:
+    """Attempt CUDA device reset - use with caution"""
+    try:
+        # Find CUDA runtime library
+        cuda_libs = [
+            'libcudart.so.12', 'libcudart.so.11', 'libcudart.so',
+            'cudart64_110.dll', 'cudart64_120.dll'
+        ]
+
+        cudart = None
+        for lib_name in cuda_libs:
+            try:
+                if os.name == 'nt':  # Windows
+                    cudart = ctypes.CDLL(lib_name)
+                else:  # Linux/Mac
+                    lib_path = ctypes.util.find_library(
+                        lib_name.replace('lib', '').replace('.so', '')
+                    )
+                    if lib_path:
+                        cudart = ctypes.CDLL(lib_path)
+                    else:
+                        cudart = ctypes.CDLL(lib_name)
+                break
+            except OSError:
+                continue
+
+        if cudart:
+            result = cudart.cudaDeviceReset()
+            if result == 0:
+                logger.info("🔄 CUDA device reset successful")
+                return True
+            else:
+                logger.warning(f"⚠️ CUDA reset returned code: {result}")
+                return False
+        else:
+            logger.warning("⚠️ CUDA runtime library not found")
+            return False
+
+    except Exception as e:
+        logger.warning(f"⚠️ CUDA reset failed: {e}")
+        return False
+
+
+def cleanup_training_artifacts(model=None, trainer=None, optimizer=None, **kwargs):
+    """
+    Cleanup training artifacts following PyTorch patterns[1]
+    Specialized cleanup for training components
+    """
+    logger.info("🧹 Cleaning up training artifacts")
+
+    artifacts_cleaned = 0
+
+    try:
+        # Model cleanup
+        if model is not None:
+            if hasattr(model, 'cpu'):
+                model = model.cpu()
+            del model
+            artifacts_cleaned += 1
+            logger.debug("✅ Model cleaned")
+
+        # Trainer cleanup
+        if trainer is not None:
+            if hasattr(trainer, 'model') and hasattr(trainer.model, 'cpu'):
+                trainer.model = trainer.model.cpu()
+            del trainer
+            artifacts_cleaned += 1
+            logger.debug("✅ Trainer cleaned")
+
+        # Optimizer cleanup[1]
+        if optimizer is not None:
+            del optimizer
+            artifacts_cleaned += 1
+            logger.debug("✅ Optimizer cleaned")
+
+        # Additional kwargs cleanup
+        for key, value in kwargs.items():
+            if value is not None:
+                del value
+                artifacts_cleaned += 1
+                logger.debug(f"✅ {key} cleaned")
+
+        # Final cleanup pass
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+        logger.info(f"✅ Training artifacts cleanup: {artifacts_cleaned} items cleaned")
+        return True
+
+    except Exception as e:
+        logger.error(f"❌ Training artifacts cleanup failed: {e}")
+        return False
+
+
+def memory_debug_info() -> dict:
+    """Get debug information for memory issues"""
+    info = {
+        'timestamp': torch.cuda.Event(enable_timing=True) if torch.cuda.is_available() else None,
+        'cuda_available': torch.cuda.is_available(),
+        'device_count': torch.cuda.device_count() if torch.cuda.is_available() else 0
+    }
+
+    if torch.cuda.is_available():
+        try:
+            info.update({
+                'current_device': torch.cuda.current_device(),
+                'memory_allocated': torch.cuda.memory_allocated(0),
+                'memory_reserved': torch.cuda.memory_reserved(0),
+                'max_memory_allocated': torch.cuda.max_memory_allocated(0),
+                'max_memory_reserved': torch.cuda.max_memory_reserved(0)
+            })
+        except Exception as e:
+            info['memory_error'] = str(e)
+
+    return info

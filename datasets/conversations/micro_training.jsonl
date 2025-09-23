@@ -1,0 +1,3 @@
+{"instruction": "Python fibonacci fonksiyonu yaz", "input": "", "output": "def fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)"}
+{"instruction": "Liste elemanlarını ters çevir", "input": "", "output": "def reverse_list(items):\n    return items[::-1]"}
+{"instruction": "İki sayıyı topla", "input": "", "output": "def add_numbers(a, b):\n    return a + b"}

@@ -1,0 +1,489 @@
+# src/ui/builder/control_panel/training_coordinator.py
+"""
+🎯 Training Coordinator - RTX 3060 için Eğitim Koordinasyon Sistemi
+Bu dosya model eğitimi süreçlerini koordine eder ve bellek yönetimini sağlar
+Python sınıf yapısı[1] ile thread-safe training queue sistemi implement eder
+"""
+
+import logging
+import threading
+import time
+import queue
+from typing import List, Dict, Any, Optional
+from dataclasses import dataclass
+from src.utils.async_logger import async_logger
+
+logger = logging.getLogger(__name__)
+
+# Global eğitim durumu - RTX 3060 için tek seferde bir eğitim
+_training_lock = threading.Lock()
+_active_model = None
+
+
+@dataclass
+class TrainingJob:
+    """
+    Eğitim işini temsil eden veri sınıfı[1]
+
+    Python'ın dataclass dekoratörü ile:
+    - Otomatik __init__ method oluşturur
+    - Type hinting sağlar
+    - Immutable data structure
+    """
+    examples: List[Dict[str, Any]]  # Eğitim örnekleri
+    topic: str  # Eğitim konusu
+    priority: int = 1  # Öncelik seviyesi (1=yüksek, 3=düşük)
+    created_time: float = 0.0  # Oluşturulma zamanı
+
+    def __post_init__(self):
+        """Dataclass post-initialization[1]"""
+        if self.created_time == 0.0:
+            self.created_time = time.time()
+
+
+class TrainingCoordinator:
+    """
+    RTX 3060 için optimize edilmiş eğitim koordinatörü sınıfı
+
+    Bu sınıf Python'ın OOP özelliklerini kullanır[1][2]:
+    - Constructor ile initialization (__init__)
+    - Instance nitelikleri ile state management[2]
+    - Method'lar ile behavior implementation[1]
+    - Thread-safe operations ile concurrency control
+    """
+
+    def __init__(self, control_panel_instance):
+        """
+        Training Coordinator constructor'ı[1]
+
+        Args:
+            control_panel_instance: Ana control panel referansı
+
+        Python sınıf constructor özellikleri[1]:
+        - __init__ method'u obje oluşturulurken çağrılır
+        - self parametresi instance'a referans sağlar[2]
+        - Instance nitelikleri (self.variable) tanımlanır
+        """
+        logger.info("🎯 Initializing TrainingCoordinator for RTX 3060")
+
+
+        # Ana control panel referansı - composition pattern
+        self.control_panel = control_panel_instance
+        self.page = control_panel_instance.page
+
+        self.training_active = False
+        self.training_thread = None
+
+        # Instance nitelikleri[2] - sınıfın durumunu tutar
+        self.is_active = False  # Coordinator aktif mi?
+        self.training_queue = queue.PriorityQueue()  # Thread-safe priority queue
+        self.completed_trainings = []  # Tamamlanan eğitimlerin listesi
+        self.failed_trainings = []  # Başarısız eğitimlerin listesi
+
+        # Thread management - RTX 3060 için kritik bellek yönetimi
+        self._coordinator_thread: Optional[threading.Thread] = None
+        self._shutdown_event = threading.Event()  # Graceful shutdown
+        self._queue_lock = threading.Lock()  # Queue operations için
+
+        # Performance metrics
+        self._total_jobs_processed = 0
+        self._average_training_time = 0.0
+        self._last_training_duration = 0.0
+
+        # RTX 3060 specific settings
+        self._max_queue_size = 5  # Maximum queue boyutu (memory protection)
+        self._training_timeout = 600  # 10 dakika timeout
+        self._memory_cleanup_interval = 30  # 30 saniyede bir memory cleanup
+
+        logger.info("✅ TrainingCoordinator initialized with RTX 3060 optimizations")
+
+
+    def safe_page_update(self):
+        """Thread-safe page update metodu"""
+        try:
+            if hasattr(self.page, 'update') and callable(self.page.update):
+                self.page.update()
+        except Exception as e:
+            logger.debug(f"Page update error: {e}")
+
+
+    def start_coordinator(self) -> bool:
+        """
+        Training coordinator'ı başlatan public method[1]
+
+        Returns:
+            bool: Başlatma başarılı ise True
+
+        Method özellikleri[1]:
+        - Public interface (dışarıdan çağrılabilir)
+        - Boolean return type ile success indication
+        - Thread-safe implementation
+        """
+        logger.info("🚀 Starting training coordinator and worker")
+
+        with self._queue_lock:
+            if self.is_active:
+                logger.warning("⚠️ Training coordinator already active")
+                return False
+
+            # State initialization
+            self.is_active = True
+            self.training_active = True
+            self._shutdown_event.clear()
+
+        try:
+            # Tek worker thread başlat
+            self.training_thread = threading.Thread(
+                target=self._unified_worker,
+                daemon=True,
+                name="TrainingCoordinator"
+            )
+            self.training_thread.start()
+
+            # Active threads listesine ekle
+            if hasattr(self.control_panel, 'active_threads'):
+                self.control_panel.active_threads.append(self.training_thread)
+
+            logger.info("✅ Training coordinator started")
+            return True
+
+        except Exception as e:
+            logger.error(f"❌ Failed to start coordinator: {e}")
+            self._cleanup_failed_start()
+            return False
+
+    def _unified_worker(self):
+        """Unified training worker"""
+        logger.info("🔄 Training coordinator worker started")
+
+        try:
+            while self.training_active and not self._shutdown_event.is_set():
+                try:
+                    # Queue'dan job al
+                    priority, timestamp, job = self.training_queue.get(timeout=1.0)
+
+                    # Job'u process et
+                    self._process_training_job(job)
+
+                    # Task'ı complete olarak işaretle
+                    self.training_queue.task_done()
+
+                except queue.Empty:
+                    continue
+                except Exception as e:
+                    logger.error(f"❌ Worker error: {e}")
+                    continue
+
+            logger.info("🏁 Training coordinator worker finished")
+
+        except Exception as e:
+            logger.error(f"❌ Worker crashed: {e}")
+        finally:
+            self._cleanup_coordinator_thread()
+
+
+    def stop_coordinator(self):
+        """Training coordinator ve worker'ı durduran method"""
+        logger.info("⏹️ Stopping training coordinator and worker")
+
+        # Training worker'ı durdur
+        self.training_active = False
+
+        if self.training_thread and self.training_thread.is_alive():
+            logger.info("⏳ Waiting for training worker to finish...")
+            self.training_thread.join(timeout=10.0)
+
+        # Coordinator thread'i durdur
+        with self._queue_lock:
+            if not self.is_active:
+                logger.debug("Training coordinator not active")
+                return
+
+            self._shutdown_event.set()
+            self.is_active = False
+
+        # Queue'daki bekleyen işleri temizle
+        self._clear_pending_jobs()
+
+        # Coordinator thread'in bitmesini bekle
+        if self._coordinator_thread and self._coordinator_thread.is_alive():
+            logger.info("⏳ Waiting for coordinator thread to finish...")
+            self._coordinator_thread.join(timeout=15.0)
+
+        logger.info("✅ Training coordinator stopped")
+
+    def queue_training(self, examples: List[Dict], topic: str, priority: int = 1) -> bool:
+        """
+        Eğitim işini queue'ya ekleyen method
+
+        Args:
+            examples: Eğitim örnekleri listesi
+            topic: Eğitim konusu
+            priority: Öncelik seviyesi (1=yüksek, 3=düşük)
+
+        Returns:
+            bool: Queue'ya ekleme başarılı ise True
+        """
+        if not examples or not topic:
+            logger.warning("⚠️ Invalid training data provided")
+            return False
+
+        try:
+            with self._queue_lock:
+                # Queue size kontrolü - RTX 3060 memory protection
+                if self.training_queue.qsize() >= self._max_queue_size:
+                    logger.warning(f"⚠️ Training queue full ({self._max_queue_size}), dropping oldest job")
+                    self._remove_oldest_job()
+
+                # Training job oluştur
+                training_job = TrainingJob(
+                    examples=examples,
+                    topic=topic,
+                    priority=priority
+                )
+
+                # Priority queue'ya ekle (düşük sayı = yüksek öncelik)
+                self.training_queue.put((priority, training_job.created_time, training_job))
+
+                logger.info(f"📝 Training job queued: {topic} (priority: {priority})")
+
+                # UI feedback
+                self._update_queue_status()
+
+                return True
+
+        except Exception as e:
+            logger.error(f"❌ Failed to queue training: {e}")
+            return False
+
+    def get_queue_status(self) -> Dict[str, Any]:
+        """
+        Queue durumunu döndüren getter method[1]
+
+        Returns:
+            Dict: Queue status bilgileri
+
+        Property-like behavior[1]:
+        - Read-only access to internal state
+        - Thread-safe read operations
+        - Formatted status data
+        """
+        with self._queue_lock:
+            status = {
+                'is_active': self.is_active,
+                'queue_size': self.training_queue.qsize(),
+                'max_queue_size': self._max_queue_size,
+                'total_processed': self._total_jobs_processed,
+                'completed_count': len(self.completed_trainings),
+                'failed_count': len(self.failed_trainings),
+                'average_training_time': self._average_training_time,
+                'last_training_duration': self._last_training_duration,
+                'active_model': _active_model
+            }
+
+            return status
+
+    def _process_training_job(self, job: TrainingJob):
+        """
+        Tek bir training job'ını işleyen private method
+
+        Args:
+            job: TrainingJob instance'ı
+
+        Processing pipeline:
+        1. Global training lock al
+        2. Memory cleanup yap
+        3. Training'i başlat
+        4. Results'ları handle et
+        5. Lock'ı release et
+        """
+        global _training_lock, _active_model
+
+        job_start_time = time.time()
+
+        logger.info(f"🎯 Processing training job: {job.topic}")
+
+        # Global training lock - RTX 3060 için tek seferde bir eğitim
+        with _training_lock:
+            try:
+                # Active model işaretle
+                _active_model = job.topic
+
+                # Pre-training cleanup - RTX 3060 memory management
+                self._perform_memory_cleanup()
+
+                # UI update
+                self._update_training_status(f"🔄 Training: {job.topic}")
+
+                # Training'i başlat
+                result = self._execute_training(job.examples, job.topic)
+
+                # Post-training cleanup
+                self._perform_memory_cleanup()
+
+                # Results'ları handle et
+                job_duration = time.time() - job_start_time
+                self._handle_training_result(job, result, job_duration)
+
+            except Exception as e:
+                # Training error handling
+                job_duration = time.time() - job_start_time
+                logger.error(f"❌ Training job failed: {job.topic} - {e}")
+                self._handle_training_failure(job, str(e), job_duration)
+
+            finally:
+                # Lock release
+                _active_model = None
+                self._update_training_status("⏳ Queue: Waiting for next job")
+
+    def _execute_training(self, examples: List[Dict], topic: str) -> Dict[str, Any]:
+        """
+        Gerçek training'i execute eden method
+
+        Args:
+            examples: Training examples
+            topic: Training topic
+
+        Returns:
+            Dict: Training sonuçları
+        """
+        try:
+            # Model loader'dan training fonksiyonunu import et
+            from src.models.model_loader import run_optimized_training
+
+            # RTX 3060 optimized training başlat
+            result = run_optimized_training(examples, topic)
+
+            logger.info(f"✅ Training completed: {topic}")
+            return result
+
+        except Exception as e:
+            logger.error(f"❌ Training execution failed: {topic} - {e}")
+            raise
+
+    def _perform_memory_cleanup(self):
+        """RTX 3060 için memory cleanup yapan method"""
+        try:
+            from src.models.model_loader import force_gpu_cleanup
+
+            cleanup_success = force_gpu_cleanup()
+            logger.debug(f"🧹 Memory cleanup: {'✅' if cleanup_success else '⚠️'}")
+
+        except Exception as e:
+            logger.debug(f"Memory cleanup error: {e}")
+
+    def _handle_training_result(self, job: TrainingJob, result: Dict, duration: float):
+        """Training başarı sonucunu handle eden method"""
+        self._total_jobs_processed += 1
+        self._last_training_duration = duration
+
+        # Average training time güncelle
+        if self._average_training_time == 0:
+            self._average_training_time = duration
+        else:
+            self._average_training_time = (self._average_training_time + duration) / 2
+
+        # Completed listesine ekle
+        self.completed_trainings.append({
+            'topic': job.topic,
+            'duration': duration,
+            'examples_count': len(job.examples),
+            'completed_time': time.time(),
+            'result': result
+        })
+
+        # UI update
+        self._update_training_status(f"✅ Completed: {job.topic}")
+
+        # Success logging
+        async_logger.info(f"🎯 Training job completed: {job.topic} in {duration:.1f}s")
+
+    def _handle_training_failure(self, job: TrainingJob, error: str, duration: float):
+        """Training hata sonucunu handle eden method"""
+        self._total_jobs_processed += 1
+        self._last_training_duration = duration
+
+        # Failed listesine ekle
+        self.failed_trainings.append({
+            'topic': job.topic,
+            'duration': duration,
+            'examples_count': len(job.examples),
+            'failed_time': time.time(),
+            'error': error
+        })
+
+        # UI update
+        self._update_training_status(f"❌ Failed: {job.topic}")
+
+        # Error logging
+        async_logger.error(f"💥 Training job failed: {job.topic} - {error}")
+
+    def _update_training_status(self, status_text: str):
+        """Training status'unu UI'da güncelleyen method"""
+        try:
+            if (hasattr(self.control_panel, 'status_text') and
+                    self.control_panel.status_text):
+                self.control_panel.status_text.value = status_text
+                # Safe page update çağrısı ekleyin:
+                self.safe_page_update()  # ✅ Kendi metodunuzu kullanın
+        except Exception as e:
+            logger.debug(f"Status update error: {e}")
+
+    def _update_queue_status(self):
+        """Queue status'unu güncelleyen method"""
+        try:
+            queue_size = self.training_queue.qsize()
+            status_text = f"📊 Queue: {queue_size} pending jobs"
+            self._update_training_status(status_text)
+        except Exception as e:
+            logger.debug(f"Queue status update error: {e}")
+
+    def _remove_oldest_job(self):
+        """Queue'dan en eski job'ı kaldıran method"""
+        try:
+            if not self.training_queue.empty():
+                # Temporary list ile queue'yu yeniden organize et
+                temp_jobs = []
+
+                # Tüm job'ları çıkar
+                while not self.training_queue.empty():
+                    try:
+                        job_data = self.training_queue.get_nowait()
+                        temp_jobs.append(job_data)
+                    except queue.Empty:
+                        break
+
+                # En eskisini (ilkini) atla, geri kalanını geri koy
+                for job_data in temp_jobs[1:]:  # İlkini atla
+                    self.training_queue.put(job_data)
+
+                logger.debug("🗑️ Removed oldest job from queue")
+
+        except Exception as e:
+            logger.debug(f"Remove oldest job error: {e}")
+
+    def _clear_pending_jobs(self):
+        """Queue'daki tüm bekleyen job'ları temizleyen method"""
+        try:
+            cleared_count = 0
+            while not self.training_queue.empty():
+                try:
+                    self.training_queue.get_nowait()
+                    cleared_count += 1
+                except queue.Empty:
+                    break
+
+            if cleared_count > 0:
+                logger.info(f"🗑️ Cleared {cleared_count} pending training jobs")
+
+        except Exception as e:
+            logger.debug(f"Clear pending jobs error: {e}")
+
+    def _cleanup_failed_start(self):
+        """Başlatma başarısızlığında cleanup"""
+        with self._queue_lock:
+            self.is_active = False
+
+    def _cleanup_coordinator_thread(self):
+        """Coordinator thread cleanup"""
+        logger.debug("🧹 Coordinator thread cleanup completed")

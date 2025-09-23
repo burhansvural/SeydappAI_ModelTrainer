@@ -1,0 +1,31 @@
+# SeydappAI ModelTrainer Konfigürasyonu
+app:
+  title: "SeydappAI Model Trainer"
+  version: "1.0.0"
+  window:
+    width: 1200
+    height: 1000
+  theme: "dark"
+
+training:
+  default_epochs: 6
+  default_batch_size: 1
+  default_learning_rate: 1e-4
+  max_sequence_length: 2048
+  output_dir: "./trained_models"
+
+models:
+  starcoder2:
+    base_models:
+      - "bigcode/starcoder2-3b"
+      - "bigcode/starcoder2-7b"
+    quantization:
+      enabled: true
+      bits: 4
+      type: "nf4"
+
+logging:
+  level: "INFO"
+  file: "logs/training.log"
+  max_size_mb: 10
+  backup_count: 3

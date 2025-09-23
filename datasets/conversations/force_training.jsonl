@@ -1,0 +1,2 @@
+{"messages": [{"role": "user", "content": "Explain python in Python"}, {"role": "assistant", "content": "Here's how to use python effectively..."}]}
+{"messages": [{"role": "user", "content": "Explain async in Python"}, {"role": "assistant", "content": "Here's how to use async effectively..."}]}

@@ -1,0 +1,227 @@
+# configs/self_learning_config.yaml
+# ✅ StarCoder2-3B Optimized Self-Learning Configuration
+# Based on bigcode/starcoder2-3b specifications
+
+name: seydappai-starcoder2-self-learning
+version: 1.0.0
+schema: v1
+
+# 🤖 Model Configuration - StarCoder2-3B Specific
+model:
+  name: "bigcode/starcoder2-3b"
+  type: "code_generation"
+  parameters: "3B"
+  context_window: 16384        # ✅ StarCoder2-3B context window[4]
+  sliding_window: 4096         # ✅ Sliding window attention[4]
+  vocab_size: 49152           # ✅ StarCoder2 vocabulary size[1]
+  hidden_size: 3072           # ✅ Hidden dimension[1]
+  programming_languages: 17    # ✅ Supported languages[4]
+
+  # ✅ Training Objective Configuration
+  training_objective: "fill_in_the_middle"  # ✅ StarCoder2 FIM objective[4]
+  max_position_embeddings: 4096             # ✅ From StarCoder2Config[1]
+
+# 🧠 Self-Learning Core Configuration
+self_learning:
+
+  # 🔍 Research Configuration - Enhanced
+  research:
+    search_engines: ["google", "bing", "duckduckgo"]
+    content_types:
+      - "documentation"
+      - "stackoverflow"
+      - "github"
+      - "arxiv"
+      - "medium"
+      - "dev.to"
+    daily_research_limit: 200               # ✅ Increased for more knowledge
+    research_topics:
+      - "python async programming"
+      - "pytorch optimization techniques"
+      - "transformer fine-tuning methods"
+      - "neural network training best practices"
+      - "code generation with transformers"
+      - "starcoder model optimization"
+      - "lora adapter training"
+    research_quality_threshold: 0.75
+    max_content_length: 5000               # ✅ Content length limit
+    research_interval_minutes: 30          # ✅ Every 30 minutes
+
+  # 🚀 Training Configuration - Optimized for RTX 3060
+  training:
+    confidence_threshold: 0.80             # ✅ Lowered from 0.85
+    knowledge_threshold: 2                 # ✅ FIXED: Reduced from 5 to 2
+    retrain_interval_hours: 2              # ✅ More frequent training
+    max_new_samples_per_cycle: 25          # ✅ Optimized for 12GB VRAM
+
+    # ✅ StarCoder2-3B Specific Training Parameters
+    learning_rate: 2e-5                    # ✅ Optimized for code models
+    batch_size: 1                          # ✅ RTX 3060 12GB optimized
+    gradient_accumulation_steps: 4         # ✅ Effective batch size = 8
+    max_steps: 100                         # ✅ Incremental training steps
+    warmup_steps: 10                       # ✅ 10% warmup
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+
+    # ✅ LoRA Configuration for StarCoder2-3B
+    lora:
+      r: 16                                # ✅ LoRA rank
+      alpha: 32                            # ✅ LoRA alpha (2*r)
+      dropout: 0.1                         # ✅ LoRA dropout
+      target_modules:
+        - "q_proj"
+        - "k_proj"
+        - "v_proj"
+        - "o_proj"
+        - "up_proj"
+        - "down_proj"
+        - "gate_proj"
+      bias: "none"
+      task_type: "CAUSAL_LM"
+
+  # 🧠 Knowledge Graph Configuration - Enhanced
+  knowledge_graph:
+    embedding_model: "all-MiniLM-L6-v2"   # ✅ Lightweight for RTX 3060
+    max_knowledge_nodes: 50000             # ✅ Increased capacity
+    similarity_threshold: 0.7              # ✅ Entity similarity
+    entity_types:
+      - "LANG"          # Programming languages
+      - "CONCEPT"       # Programming concepts
+      - "FUNCTION"      # Function names
+      - "CLASS"         # Class names
+      - "LIBRARY"       # Libraries/frameworks
+      - "PATTERN"       # Design patterns
+      - "ERROR"         # Error types
+      - "SYNTAX"        # Syntax elements
+
+    # ✅ Knowledge Persistence
+    persistence:
+      save_interval_minutes: 5             # ✅ Auto-save every 5 minutes
+      backup_interval_hours: 24            # ✅ Daily backups
+      max_backup_files: 7                  # ✅ Keep 1 week of backups
+      compression: true                    # ✅ Compress knowledge files
+
+  # 🎯 Autonomous Learning Configuration
+  autonomous:
+    enabled: true                          # ✅ Enable autonomous learning
+    evaluation_interval_minutes: 5        # ✅ Check every 5 minutes
+    force_training_after_hours: 4          # ✅ Force training if no activity
+
+    # ✅ Learning Triggers
+    triggers:
+      knowledge_growth_rate: 0.1           # ✅ 10% growth triggers training
+      confidence_drop_threshold: 0.1       # ✅ Confidence drop triggers research
+      error_rate_threshold: 0.3            # ✅ High error rate triggers retraining
+
+    # ✅ Quality Control
+    quality_control:
+      min_training_samples: 5              # ✅ Minimum samples for training
+      max_training_time_minutes: 30        # ✅ Training timeout
+      validation_split: 0.2                # ✅ 20% validation split
+      early_stopping_patience: 3           # ✅ Early stopping
+
+# 🛠️ Hardware Optimization - RTX 3060 Specific
+hardware:
+  device: "cuda"
+  memory_optimization: true
+  gradient_checkpointing: true             # ✅ Save VRAM
+  fp16: true                              # ✅ Mixed precision
+  dataloader_pin_memory: true             # ✅ Faster data loading
+  dataloader_num_workers: 4               # ✅ Parallel data loading
+
+  # ✅ VRAM Management
+  vram_management:
+    max_memory_fraction: 0.85             # ✅ Use 85% of 12GB
+    clear_cache_interval: 10              # ✅ Clear every 10 steps
+    offload_optimizer: false              # ✅ Keep optimizer on GPU for 3B model
+
+# 📊 Monitoring and Logging
+monitoring:
+  log_level: "INFO"
+  log_interval_steps: 5                   # ✅ Log every 5 steps
+  save_steps: 25                          # ✅ Save checkpoint every 25 steps
+  eval_steps: 25                          # ✅ Evaluate every 25 steps
+
+  # ✅ Metrics Tracking
+  metrics:
+    - "loss"
+    - "perplexity"
+    - "learning_rate"
+    - "gradient_norm"
+    - "memory_usage"
+    - "tokens_per_second"
+
+  # ✅ UI Update Configuration
+  ui_updates:
+    refresh_interval_seconds: 2           # ✅ Real-time UI updates
+    terminal_max_lines: 100               # ✅ Terminal log limit
+    progress_update_frequency: "step"     # ✅ Update every step
+
+# 🔒 Safety and Validation
+safety:
+  content_filtering:
+    enabled: true
+    profanity_filter: true
+    code_injection_protection: true
+    max_response_length: 2048
+
+  model_validation:
+    validate_before_training: true
+    validate_after_training: true
+    safety_checks: ["coherence", "factuality", "safety"]
+
+# 🚀 Performance Tuning - StarCoder2-3B Optimized
+performance:
+  compilation:
+    torch_compile: false                  # ✅ Disable for stability
+    compile_mode: "default"
+
+  memory_efficient_attention: true       # ✅ Flash attention if available
+  use_reentrant_checkpoint: false        # ✅ Modern gradient checkpointing
+
+  # ✅ Inference Optimization
+  inference:
+    do_sample: true
+    temperature: 0.7
+    top_p: 0.9
+    top_k: 50
+    repetition_penalty: 1.1
+    max_new_tokens: 512                   # ✅ Code generation length
+
+# 🔄 Data Pipeline Configuration
+data_pipeline:
+  preprocessing:
+    tokenizer_parallelism: true
+    remove_duplicates: true
+    shuffle_buffer_size: 1000
+
+  # ✅ Code-Specific Processing
+  code_processing:
+    preserve_indentation: true
+    remove_comments: false                # ✅ Keep comments for context
+    max_line_length: 100
+    supported_extensions:
+      - ".py"
+      - ".js"
+      - ".ts"
+      - ".java"
+      - ".cpp"
+      - ".c"
+      - ".rs"
+      - ".go"
+      - ".php"
+      - ".rb"
+      - ".swift"
+      - ".kt"
+      - ".scala"
+      - ".r"
+      - ".sql"
+      - ".html"
+      - ".css"
+
+# 🧪 Experimental Features
+experimental:
+  multi_modal_learning: false            # ✅ Future: Code + documentation
+  adaptive_learning_rate: true           # ✅ Dynamic LR adjustment
+  curriculum_learning: false             # ✅ Future: Progressive difficulty
+  meta_learning: false                   # ✅ Future: Learn to learn

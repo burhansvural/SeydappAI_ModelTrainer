@@ -1,0 +1,31 @@
+# SeydappAI ModelTrainer Dependencies
+# Core ML Libraries
+torch>=2.0.0
+transformers>=4.35.0
+peft>=0.5.0
+bitsandbytes>=0.41.0
+accelerate>=0.23.0
+datasets>=2.14.0
+
+# UI Framework
+flet>=0.28.3
+
+# Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Development
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+networkx>=3.1
+sentence-transformers>=2.2.2
+
+aiofiles>=24.1.0
+psutil>=5.9.0
+GPUtil>=1.4.0

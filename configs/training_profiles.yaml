@@ -1,0 +1,40 @@
+# configs/training_profiles.yaml
+# configs/training_profiles.yaml
+training_profiles:
+  micro_test:
+    name: "5-Minute Test"
+    description: "Hızlı test için minimal ayarlar"
+    model: "bigcode/starcoder2-3b"
+    max_steps: 2
+    epochs: 1
+    learning_rate: 1e-4
+    batch_size: 1
+    lora_rank: 8
+
+  rtx3060_optimized:
+    name: "RTX 3060 Optimized"
+    description: "RTX 3060 için optimize edilmiş ayarlar"
+    model: "bigcode/starcoder2-3b"
+    max_steps: 100
+    epochs: 3
+    learning_rate: 5e-5
+    batch_size: 1
+    lora_rank: 16
+
+  production:
+    name: "Production Training"
+    description: "Tam kapsamlı production training"
+    model: "bigcode/starcoder2-3b"
+    max_steps: 1000
+    epochs: 5
+    learning_rate: 2e-5
+    batch_size: 4
+    lora_rank: 32
+
+hardware_profiles:
+  rtx3060:
+    vram_gb: 12
+    recommended_batch_size: 2
+    max_sequence_length: 512
+    quantization: "4bit"
+    mixed_precision: true
