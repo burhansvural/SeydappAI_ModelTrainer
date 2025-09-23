@@ -740,12 +740,33 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 - **BigCode**: StarCoder2 modelleri için
 - **PyTorch Team**: Deep learning framework için
 
+## 💼 Destek ve Satın Alma
+
+### 🤝 Proje Desteği
+Bu projeye destek olmak veya **tamamen haklarını satın almak** isterseniz:
+
+📞 **İletişim:** +90 544 780 6678
+
+### 💡 Destek Seçenekleri:
+- **🎯 Teknik Destek**: Kurulum ve kullanım desteği
+- **🔧 Özelleştirme**: Özel ihtiyaçlarınız için geliştirme
+- **📚 Eğitim**: AI model eğitimi konusunda danışmanlık
+- **💰 Tam Haklar**: Projenin tüm haklarını satın alma
+
+### 🌟 Neden SeydappAI?
+- ✅ **Kanıtlanmış Teknoloji**: RTX 3060 için optimize edilmiş
+- ✅ **Sürekli Geliştirme**: Aktif olarak güncellenen kod tabanı
+- ✅ **Profesyonel Destek**: Deneyimli geliştirici desteği
+- ✅ **Ticari Kullanım**: İş projelerinizde kullanıma hazır
+
 ---
 
 <div align="center">
 
 **🤖 SeydappAI ModelTrainer ile AI modellerinizi kolayca eğitin! 🚀**
 
-[⭐ Star](https://github.com/your-username/SeydappAI_ModelTrainer) | [🐛 Issues](https://github.com/your-username/SeydappAI_ModelTrainer/issues) | [📖 Wiki](https://github.com/your-username/SeydappAI_ModelTrainer/wiki)
+[⭐ Star](https://github.com/burhansvural/SeydappAI_ModelTrainer) | [🐛 Issues](https://github.com/burhansvural/SeydappAI_ModelTrainer/issues) | [📞 İletişim](tel:+905447806678)
+
+**📞 Destek & Satın Alma: +90 544 780 6678**
 
 </div>

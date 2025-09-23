@@ -1603,14 +1603,43 @@ def setup_distributed_training():
 
 ### 💬 İletişim Kanalları
 - **GitHub Issues**: Bug reports ve feature requests
-- **Discord**: Real-time chat ve destek
-- **Email**: contact@seydappai.com
+- **📞 Direkt İletişim**: +90 544 780 6678 (Teknik destek ve satın alma)
 
 ### 🆘 Destek Alma
-1. **GitHub Issues**: Teknik problemler için
-2. **Documentation**: Bu klavuz ve README
-3. **Community**: Discord kanalında soru sorma
-4. **Stack Overflow**: `seydappai` tag'i ile
+1. **📞 Telefon Desteği**: +90 544 780 6678 (En hızlı çözüm)
+2. **GitHub Issues**: Teknik problemler için
+3. **Documentation**: Bu klavuz ve README
+
+### 💼 Profesyonel Destek Seçenekleri
+
+#### 🎯 **Teknik Destek**
+- Kurulum ve konfigürasyon yardımı
+- Performance optimizasyonu
+- Hata giderme ve debugging
+- Model eğitimi danışmanlığı
+
+#### 🔧 **Özelleştirme Hizmetleri**
+- Özel model mimarileri
+- Sektöre özel dataset hazırlama
+- UI/UX özelleştirmeleri
+- API entegrasyonları
+
+#### 📚 **Eğitim ve Danışmanlık**
+- AI model eğitimi workshop'ları
+- Deep learning konseptleri eğitimi
+- Proje yönetimi danışmanlığı
+- Teknik ekip eğitimi
+
+#### 💰 **Tam Haklar Satın Alma**
+- Projenin tüm kaynak kodları
+- Ticari kullanım hakları
+- Sürekli güncelleme garantisi
+- Özel geliştirme desteği
+
+### 📞 **İletişim Bilgileri**
+**Telefon:** +90 544 780 6678  
+**Çalışma Saatleri:** 09:00 - 18:00 (GMT+3)  
+**Diller:** Türkçe, İngilizce
 
 ---
 
@@ -1618,10 +1647,12 @@ def setup_distributed_training():
 
 **🎯 Bu klavuz ile SeydappAI ModelTrainer'ı etkili şekilde kullanabilirsiniz!**
 
-**Sorularınız için:** [GitHub Issues](https://github.com/your-username/SeydappAI_ModelTrainer/issues) | [Discord](https://discord.gg/seydappai)
+**📞 Destek & Satın Alma: +90 544 780 6678**
+
+[GitHub Issues](https://github.com/burhansvural/SeydappAI_ModelTrainer/issues) | [📞 İletişim](tel:+905447806678)
 
 ---
 
-*Son güncelleme: 2024*
+*Son güncelleme: 2024 | v2.1.0*
 
 </div>
