@@ -1,0 +1,665 @@
+2025-09-24 16:14:05 - SeydappAI-Main       - MainThread      - INFO     - 📝 Enhanced thread-safe logging system initialized
+2025-09-24 16:14:05 - SeydappAI-Main       - MainThread      - INFO     - 🔍 System requirements validation...
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 16:14:05 - SeydappAI-Main       - MainThread      - INFO     - ✅ System ready - Enhanced thread-safe logging active
+2025-09-24 16:14:05 - flet                 - MainThread      - INFO     - Assets path configured: /home/burhan/Genel/python_projeler/SeydappAI_ModelTrainer/assets
+2025-09-24 16:14:05 - flet                 - MainThread      - INFO     - Starting up UDS server on /tmp/lDaCwPPADL
+2025-09-24 16:14:05 - flet                 - MainThread      - INFO     - Flet app has started...
+2025-09-24 16:14:05 - flet                 - MainThread      - INFO     - App URL: /tmp/lDaCwPPADL
+2025-09-24 16:14:05 - flet_desktop         - MainThread      - INFO     - Starting Flet View app...
+2025-09-24 16:14:05 - flet_desktop         - MainThread      - INFO     - Flet View found in: /home/burhan/.flet/bin/flet-0.28.3
+2025-09-24 16:14:05 - flet                 - MainThread      - INFO     - App session started
+2025-09-24 16:14:05 - AppLifespan          - MainThread      - INFO     - 🚀 Application startup initiated
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 16:14:05 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 16:14:05 - AppLifespan          - MainThread      - INFO     - ✅ Application startup completed
+2025-09-24 16:14:05 - FletUI               - MainThread      - INFO     - 🎨 Creating UI components...
+2025-09-24 16:14:05 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔍 UltraModernTrainingUI instance created
+2025-09-24 16:14:05 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UltraModernTrainingUI factory completed
+2025-09-24 16:14:05 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔧 Starting enhanced UI component initialization sequence
+2025-09-24 16:14:05 - src.ui.builder.log_system - MainThread      - INFO     - Initialized LogSystem
+2025-09-24 16:14:05 - src.ui.builder.dashboard_cards - MainThread      - INFO     - Intialized DashboardCards - UI components not created yet
+2025-09-24 16:14:05 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 🔧 Creating dashboard UI components
+2025-09-24 16:14:06 - src.ui.builder.dashboard_cards - MainThread      - INFO     - ✅ Dashboard UI components created
+2025-09-24 16:14:06 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 💡 Real-time monitoring hazır - manuel başlatılabilir
+2025-09-24 16:14:06 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🎮 Creating ControlPanel with configuration
+2025-09-24 16:14:06 - src.ui.builder.control_panel - MainThread      - INFO     - 🎮 Initializing ControlPanel with state management
+2025-09-24 16:14:06 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🔧 Initializing ControlPanelBase
+2025-09-24 16:14:06 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ ControlPanelBase initialized
+2025-09-24 16:14:06 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - 🎯 Initializing EventHandlers
+2025-09-24 16:14:06 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - ✅ EventHandlers initialized with thread safety
+2025-09-24 16:14:06 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - 🤖 Initializing AutonomousLearningManager
+2025-09-24 16:14:06 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - ✅ AutonomousLearningManager initialized
+2025-09-24 16:14:06 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - 📊 Initializing ProgressMonitor
+2025-09-24 16:14:06 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - ✅ ProgressMonitor initialized
+2025-09-24 16:14:06 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - 🎯 TrainingCoordinator (Nihai Sürüm) başlatılıyor...
+2025-09-24 16:14:06 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - ✅ TrainingCoordinator başlatıldı.
+2025-09-24 16:14:06 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ ControlPanel initialized with proper state
+2025-09-24 16:14:06 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - 🎨 Creating control panel with factory components
+2025-09-24 16:14:06 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - ✅ Control panel created with event handlers connected
+2025-09-24 16:14:06 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ Controls created with event handlers connected
+2025-09-24 16:14:06 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - 🔧 Creating sidebar UI components
+2025-09-24 16:14:06 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - ✅ Sidebar UI components created
+2025-09-24 16:14:06 - src.ui.builder.main_content - MainThread      - INFO     - Initialized MainContent
+2025-09-24 16:14:06 - src.ui.builder.main_content - MainThread      - INFO     - 🔧 Creating main content UI structure
+2025-09-24 16:14:06 - src.ui.builder.view_manager - MainThread      - INFO     - Initialized ViewManager
+2025-09-24 16:14:06 - src.ui.builder.view_manager - MainThread      - INFO     - 🔧 Creating views from separate modules
+2025-09-24 16:14:06 - src.ui.views.settings_view - MainThread      - INFO     - 🔧 Settings view creation started
+2025-09-24 16:14:06 - src.ui.views.settings_view - MainThread      - INFO     - ✅ Settings view components created successfully
+2025-09-24 16:14:06 - src.ui.builder.view_manager - MainThread      - INFO     - ✅ All views created from separate modules
+2025-09-24 16:14:06 - src.ui.builder.main_content - MainThread      - INFO     - ✅ Main content UI structure created
+2025-09-24 16:14:06 - src.ui.builder.log_system - MainThread      - INFO     - 🔧 Log UI attached to page
+2025-09-24 16:14:06 - src.ui.builder.log_system - MainThread      - INFO     - 📋 Adding 3 queued logs to UI
+2025-09-24 16:14:06 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UI initialization completed successfully
+2025-09-24 16:14:06 - FletUI               - MainThread      - INFO     - ✅ UI successfully loaded
+2025-09-24 16:14:06 - FletUI               - MainThread      - INFO     - ✅ Page setup completed
+2025-09-24 16:14:06 - AppLifespan          - MainThread      - INFO     - 🛑 Application shutdown initiated
+2025-09-24 16:14:06 - AppLifespan          - MainThread      - INFO     - 🧹 Cleaning up application resources...
+2025-09-24 16:14:06 - AppLifespan          - MainThread      - INFO     - ✅ Application shutdown completed
+2025-09-24 16:14:12 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - 🔄 Processing view change request: chat
+2025-09-24 16:14:12 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - ✅ View change completed successfully
+2025-09-24 16:15:27 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - 🧠 Simple RAG Retriever initialized
+2025-09-24 16:15:27 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 📚 Loaded 2 learned knowledge entries
+2025-09-24 16:15:27 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 🧠 Self-Learning System initialized - 2 knowledge entries loaded
+2025-09-24 16:15:27 - src.research.web_search_utils - Thread-3 (process_ai_response) - INFO     - 🔍 WebSearchUtils initialized
+2025-09-24 16:15:27 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - ✅ Retrieved context for query: Android için java programlama dili ile bir kart oluştur. İçerisinde yuvarlak resim alanında kişi resmi ve altında veya yanında profil bilgileri olsun.
+2025-09-24 16:15:27 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🔍 Searching web for: Android için java programlama dili ile bir kart oluştur. İçerisinde yuvarlak resim alanında kişi resmi ve altında veya yanında profil bilgileri olsun.
+2025-09-24 16:15:27 - src.research.web_search_utils - Thread-3 (process_ai_response) - INFO     - 🔍 Searching for programming question: Android için java programlama dili ile bir kart oluştur. İçerisinde yuvarlak resim alanında kişi resmi ve altında veya yanında profil bilgileri olsun.
+2025-09-24 16:15:27 - src.knowledge.self_learning_system - Thread-4 (learn_async) - INFO     - 💾 Learned knowledge saved: 3 entries
+2025-09-24 16:15:27 - src.knowledge.self_learning_system - Thread-4 (learn_async) - INFO     - 🎓 New knowledge learned - Category: android, Quality: 6.9
+2025-09-24 16:15:27 - src.ui.ai_chat_interface - Thread-4 (learn_async) - INFO     - 🎓 Successfully learned new knowledge. Total: 1
+2025-09-24 16:46:42 - SeydappAI-Main       - MainThread      - INFO     - 🏁 SeydappAI ModelTrainer session ended
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Application normal exit - starting cleanup...
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Starting comprehensive resource cleanup
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up threads...
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up 0 threads...
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ 0 threads cleaned up
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🎮 GPU memory cleanup...
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🖥️ UI cleanup...
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Resource cleanup completed successfully
+2025-09-24 16:46:42 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Normal exit cleanup completed
+2025-09-24 16:46:42 - SeydappAI-Main       - MainThread      - INFO     - 🧹 Cleaning up logging system...
+2025-09-24 17:59:20 - SeydappAI-Main       - MainThread      - INFO     - 📝 Enhanced thread-safe logging system initialized
+2025-09-24 17:59:20 - SeydappAI-Main       - MainThread      - INFO     - 🔍 System requirements validation...
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 17:59:20 - SeydappAI-Main       - MainThread      - INFO     - ✅ System ready - Enhanced thread-safe logging active
+2025-09-24 17:59:20 - flet                 - MainThread      - INFO     - Assets path configured: /home/burhan/Genel/python_projeler/SeydappAI_ModelTrainer/assets
+2025-09-24 17:59:20 - flet                 - MainThread      - INFO     - Starting up UDS server on /tmp/54Ifnh8wQL
+2025-09-24 17:59:20 - flet                 - MainThread      - INFO     - Flet app has started...
+2025-09-24 17:59:20 - flet                 - MainThread      - INFO     - App URL: /tmp/54Ifnh8wQL
+2025-09-24 17:59:20 - flet_desktop         - MainThread      - INFO     - Starting Flet View app...
+2025-09-24 17:59:20 - flet_desktop         - MainThread      - INFO     - Flet View found in: /home/burhan/.flet/bin/flet-0.28.3
+2025-09-24 17:59:20 - flet                 - MainThread      - INFO     - App session started
+2025-09-24 17:59:20 - AppLifespan          - MainThread      - INFO     - 🚀 Application startup initiated
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 17:59:20 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 17:59:20 - AppLifespan          - MainThread      - INFO     - ✅ Application startup completed
+2025-09-24 17:59:20 - FletUI               - MainThread      - INFO     - 🎨 Creating UI components...
+2025-09-24 17:59:20 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔍 UltraModernTrainingUI instance created
+2025-09-24 17:59:20 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UltraModernTrainingUI factory completed
+2025-09-24 17:59:20 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔧 Starting enhanced UI component initialization sequence
+2025-09-24 17:59:20 - src.ui.builder.log_system - MainThread      - INFO     - Initialized LogSystem
+2025-09-24 17:59:20 - src.ui.builder.dashboard_cards - MainThread      - INFO     - Intialized DashboardCards - UI components not created yet
+2025-09-24 17:59:20 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 🔧 Creating dashboard UI components
+2025-09-24 17:59:20 - src.ui.builder.dashboard_cards - MainThread      - INFO     - ✅ Dashboard UI components created
+2025-09-24 17:59:20 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 💡 Real-time monitoring hazır - manuel başlatılabilir
+2025-09-24 17:59:20 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🎮 Creating ControlPanel with configuration
+2025-09-24 17:59:20 - src.ui.builder.control_panel - MainThread      - INFO     - 🎮 Initializing ControlPanel with state management
+2025-09-24 17:59:20 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🔧 Initializing ControlPanelBase
+2025-09-24 17:59:20 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ ControlPanelBase initialized
+2025-09-24 17:59:20 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - 🎯 Initializing EventHandlers
+2025-09-24 17:59:20 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - ✅ EventHandlers initialized with thread safety
+2025-09-24 17:59:20 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - 🤖 Initializing AutonomousLearningManager
+2025-09-24 17:59:20 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - ✅ AutonomousLearningManager initialized
+2025-09-24 17:59:20 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - 📊 Initializing ProgressMonitor
+2025-09-24 17:59:20 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - ✅ ProgressMonitor initialized
+2025-09-24 17:59:20 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - 🎯 TrainingCoordinator (Nihai Sürüm) başlatılıyor...
+2025-09-24 17:59:20 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - ✅ TrainingCoordinator başlatıldı.
+2025-09-24 17:59:20 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ ControlPanel initialized with proper state
+2025-09-24 17:59:20 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - 🎨 Creating control panel with factory components
+2025-09-24 17:59:20 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - ✅ Control panel created with event handlers connected
+2025-09-24 17:59:20 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ Controls created with event handlers connected
+2025-09-24 17:59:20 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - 🔧 Creating sidebar UI components
+2025-09-24 17:59:20 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - ✅ Sidebar UI components created
+2025-09-24 17:59:20 - src.ui.builder.main_content - MainThread      - INFO     - Initialized MainContent
+2025-09-24 17:59:20 - src.ui.builder.main_content - MainThread      - INFO     - 🔧 Creating main content UI structure
+2025-09-24 17:59:20 - src.ui.builder.view_manager - MainThread      - INFO     - Initialized ViewManager
+2025-09-24 17:59:20 - src.ui.builder.view_manager - MainThread      - INFO     - 🔧 Creating views from separate modules
+2025-09-24 17:59:20 - src.ui.views.settings_view - MainThread      - INFO     - 🔧 Settings view creation started
+2025-09-24 17:59:20 - src.ui.views.settings_view - MainThread      - INFO     - ✅ Settings view components created successfully
+2025-09-24 17:59:20 - src.ui.builder.view_manager - MainThread      - INFO     - ✅ All views created from separate modules
+2025-09-24 17:59:20 - src.ui.builder.main_content - MainThread      - INFO     - ✅ Main content UI structure created
+2025-09-24 17:59:20 - src.ui.builder.log_system - MainThread      - INFO     - 🔧 Log UI attached to page
+2025-09-24 17:59:20 - src.ui.builder.log_system - MainThread      - INFO     - 📋 Adding 3 queued logs to UI
+2025-09-24 17:59:20 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UI initialization completed successfully
+2025-09-24 17:59:20 - FletUI               - MainThread      - INFO     - ✅ UI successfully loaded
+2025-09-24 17:59:20 - FletUI               - MainThread      - INFO     - ✅ Page setup completed
+2025-09-24 17:59:20 - AppLifespan          - MainThread      - INFO     - 🛑 Application shutdown initiated
+2025-09-24 17:59:20 - AppLifespan          - MainThread      - INFO     - 🧹 Cleaning up application resources...
+2025-09-24 17:59:20 - AppLifespan          - MainThread      - INFO     - ✅ Application shutdown completed
+2025-09-24 17:59:30 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - 🔄 Processing view change request: chat
+2025-09-24 17:59:30 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - ✅ View change completed successfully
+2025-09-24 17:59:56 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - 🧠 Simple RAG Retriever initialized
+2025-09-24 17:59:56 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 📚 Loaded 2 learned knowledge entries
+2025-09-24 17:59:56 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 🧠 Self-Learning System initialized - 2 knowledge entries loaded
+2025-09-24 17:59:56 - src.research.web_search_utils - Thread-3 (process_ai_response) - INFO     - 🔄 WebSearchUtils initialized - using real web search
+2025-09-24 17:59:56 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - ✅ Retrieved context for query: Android için java programlama dili ile bir CardView oluştur.
+2025-09-24 17:59:56 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🔍 Web'de arıyorum: Android için java programlama dili ile bir CardView oluştur.
+2025-09-24 17:59:56 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🌐 Starting web search for: Android için java programlama dili ile bir CardView oluştur.
+2025-09-24 17:59:56 - src.research.simple_web_search - Thread-3 (process_ai_response) - INFO     - 🌐 Simple Web Search System initialized
+2025-09-24 17:59:56 - src.research.simple_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Simple web search for: Android için java programlama dili ile bir CardView oluştur.
+2025-09-24 17:59:57 - src.research.simple_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ DuckDuckGo search failed: 202
+2025-09-24 17:59:58 - src.research.simple_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ GeeksforGeeks search failed: 500
+2025-09-24 17:59:58 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - WARNING  - ⚠️ No web results found for: Android için java programlama dili ile bir CardView oluştur.
+2025-09-24 18:01:07 - src.knowledge.rag_retriever - Thread-4 (process_ai_response) - INFO     - 🧠 Simple RAG Retriever initialized
+2025-09-24 18:01:07 - src.knowledge.self_learning_system - Thread-4 (process_ai_response) - INFO     - 📚 Loaded 2 learned knowledge entries
+2025-09-24 18:01:07 - src.knowledge.self_learning_system - Thread-4 (process_ai_response) - INFO     - 🧠 Self-Learning System initialized - 2 knowledge entries loaded
+2025-09-24 18:01:07 - src.research.web_search_utils - Thread-4 (process_ai_response) - INFO     - 🔄 WebSearchUtils initialized - using real web search
+2025-09-24 18:01:07 - src.knowledge.rag_retriever - Thread-4 (process_ai_response) - INFO     - ✅ Retrieved context for query: Şimdi bir ListView oluştur ve listenin her elaman bu CardView'i içersin.
+2025-09-24 18:01:07 - src.ui.ai_chat_interface - Thread-4 (process_ai_response) - INFO     - 🔍 Web'de arıyorum: Şimdi bir ListView oluştur ve listenin her elaman bu CardView'i içersin.
+2025-09-24 18:01:07 - src.ui.ai_chat_interface - Thread-4 (process_ai_response) - INFO     - 🌐 Starting web search for: Şimdi bir ListView oluştur ve listenin her elaman bu CardView'i içersin.
+2025-09-24 18:01:07 - src.research.simple_web_search - Thread-4 (process_ai_response) - INFO     - 🌐 Simple Web Search System initialized
+2025-09-24 18:01:07 - src.research.simple_web_search - Thread-4 (process_ai_response) - INFO     - 🔍 Simple web search for: Şimdi bir ListView oluştur ve listenin her elaman bu CardView'i içersin.
+2025-09-24 18:01:08 - src.research.simple_web_search - Thread-4 (process_ai_response) - WARNING  - ⚠️ DuckDuckGo search failed: 202
+2025-09-24 18:01:08 - src.ui.ai_chat_interface - Thread-4 (process_ai_response) - WARNING  - ⚠️ No web results found for: Şimdi bir ListView oluştur ve listenin her elaman bu CardView'i içersin.
+2025-09-24 18:01:29 - SeydappAI-Main       - MainThread      - INFO     - 🏁 SeydappAI ModelTrainer session ended
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Application normal exit - starting cleanup...
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Starting comprehensive resource cleanup
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up threads...
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up 0 threads...
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ 0 threads cleaned up
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🎮 GPU memory cleanup...
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🖥️ UI cleanup...
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Resource cleanup completed successfully
+2025-09-24 18:01:29 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Normal exit cleanup completed
+2025-09-24 18:01:29 - SeydappAI-Main       - MainThread      - INFO     - 🧹 Cleaning up logging system...
+2025-09-24 18:02:58 - SeydappAI-Main       - MainThread      - INFO     - 📝 Enhanced thread-safe logging system initialized
+2025-09-24 18:02:58 - SeydappAI-Main       - MainThread      - INFO     - 🔍 System requirements validation...
+2025-09-24 18:02:58 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 18:02:58 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 18:02:58 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 18:02:58 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 18:02:58 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 18:02:58 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 18:02:58 - SeydappAI-Main       - MainThread      - INFO     - ✅ System ready - Enhanced thread-safe logging active
+2025-09-24 18:02:58 - flet                 - MainThread      - INFO     - Assets path configured: /home/burhan/Genel/python_projeler/SeydappAI_ModelTrainer/assets
+2025-09-24 18:02:58 - flet                 - MainThread      - INFO     - Starting up UDS server on /tmp/5jlYwuDZ7t
+2025-09-24 18:02:58 - flet                 - MainThread      - INFO     - Flet app has started...
+2025-09-24 18:02:58 - flet                 - MainThread      - INFO     - App URL: /tmp/5jlYwuDZ7t
+2025-09-24 18:02:58 - flet_desktop         - MainThread      - INFO     - Starting Flet View app...
+2025-09-24 18:02:58 - flet_desktop         - MainThread      - INFO     - Flet View found in: /home/burhan/.flet/bin/flet-0.28.3
+2025-09-24 18:02:59 - flet                 - MainThread      - INFO     - App session started
+2025-09-24 18:02:59 - AppLifespan          - MainThread      - INFO     - 🚀 Application startup initiated
+2025-09-24 18:02:59 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 18:02:59 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 18:02:59 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 18:02:59 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 18:02:59 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 18:02:59 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 18:02:59 - AppLifespan          - MainThread      - INFO     - ✅ Application startup completed
+2025-09-24 18:02:59 - FletUI               - MainThread      - INFO     - 🎨 Creating UI components...
+2025-09-24 18:02:59 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔍 UltraModernTrainingUI instance created
+2025-09-24 18:02:59 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UltraModernTrainingUI factory completed
+2025-09-24 18:02:59 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔧 Starting enhanced UI component initialization sequence
+2025-09-24 18:02:59 - src.ui.builder.log_system - MainThread      - INFO     - Initialized LogSystem
+2025-09-24 18:02:59 - src.ui.builder.dashboard_cards - MainThread      - INFO     - Intialized DashboardCards - UI components not created yet
+2025-09-24 18:02:59 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 🔧 Creating dashboard UI components
+2025-09-24 18:02:59 - src.ui.builder.dashboard_cards - MainThread      - INFO     - ✅ Dashboard UI components created
+2025-09-24 18:02:59 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 💡 Real-time monitoring hazır - manuel başlatılabilir
+2025-09-24 18:02:59 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🎮 Creating ControlPanel with configuration
+2025-09-24 18:02:59 - src.ui.builder.control_panel - MainThread      - INFO     - 🎮 Initializing ControlPanel with state management
+2025-09-24 18:02:59 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🔧 Initializing ControlPanelBase
+2025-09-24 18:02:59 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ ControlPanelBase initialized
+2025-09-24 18:02:59 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - 🎯 Initializing EventHandlers
+2025-09-24 18:02:59 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - ✅ EventHandlers initialized with thread safety
+2025-09-24 18:02:59 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - 🤖 Initializing AutonomousLearningManager
+2025-09-24 18:02:59 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - ✅ AutonomousLearningManager initialized
+2025-09-24 18:02:59 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - 📊 Initializing ProgressMonitor
+2025-09-24 18:02:59 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - ✅ ProgressMonitor initialized
+2025-09-24 18:02:59 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - 🎯 TrainingCoordinator (Nihai Sürüm) başlatılıyor...
+2025-09-24 18:02:59 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - ✅ TrainingCoordinator başlatıldı.
+2025-09-24 18:02:59 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ ControlPanel initialized with proper state
+2025-09-24 18:02:59 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - 🎨 Creating control panel with factory components
+2025-09-24 18:02:59 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - ✅ Control panel created with event handlers connected
+2025-09-24 18:02:59 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ Controls created with event handlers connected
+2025-09-24 18:02:59 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - 🔧 Creating sidebar UI components
+2025-09-24 18:02:59 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - ✅ Sidebar UI components created
+2025-09-24 18:02:59 - src.ui.builder.main_content - MainThread      - INFO     - Initialized MainContent
+2025-09-24 18:02:59 - src.ui.builder.main_content - MainThread      - INFO     - 🔧 Creating main content UI structure
+2025-09-24 18:02:59 - src.ui.builder.view_manager - MainThread      - INFO     - Initialized ViewManager
+2025-09-24 18:02:59 - src.ui.builder.view_manager - MainThread      - INFO     - 🔧 Creating views from separate modules
+2025-09-24 18:02:59 - src.ui.views.settings_view - MainThread      - INFO     - 🔧 Settings view creation started
+2025-09-24 18:02:59 - src.ui.views.settings_view - MainThread      - INFO     - ✅ Settings view components created successfully
+2025-09-24 18:02:59 - src.ui.builder.view_manager - MainThread      - INFO     - ✅ All views created from separate modules
+2025-09-24 18:02:59 - src.ui.builder.main_content - MainThread      - INFO     - ✅ Main content UI structure created
+2025-09-24 18:02:59 - src.ui.builder.log_system - MainThread      - INFO     - 🔧 Log UI attached to page
+2025-09-24 18:02:59 - src.ui.builder.log_system - MainThread      - INFO     - 📋 Adding 3 queued logs to UI
+2025-09-24 18:02:59 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UI initialization completed successfully
+2025-09-24 18:02:59 - FletUI               - MainThread      - INFO     - ✅ UI successfully loaded
+2025-09-24 18:02:59 - FletUI               - MainThread      - INFO     - ✅ Page setup completed
+2025-09-24 18:02:59 - AppLifespan          - MainThread      - INFO     - 🛑 Application shutdown initiated
+2025-09-24 18:02:59 - AppLifespan          - MainThread      - INFO     - 🧹 Cleaning up application resources...
+2025-09-24 18:02:59 - AppLifespan          - MainThread      - INFO     - ✅ Application shutdown completed
+2025-09-24 18:03:07 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - 🔄 Processing view change request: chat
+2025-09-24 18:03:07 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - ✅ View change completed successfully
+2025-09-24 18:03:45 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - 🧠 Simple RAG Retriever initialized
+2025-09-24 18:03:45 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 📚 Loaded 2 learned knowledge entries
+2025-09-24 18:03:45 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 🧠 Self-Learning System initialized - 2 knowledge entries loaded
+2025-09-24 18:03:45 - src.research.web_search_utils - Thread-3 (process_ai_response) - INFO     - 🔄 WebSearchUtils initialized - using real web search
+2025-09-24 18:03:45 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - ✅ Retrieved context for query: Android için java programlama dili ile bir ListView örneği oluştur. Layout kısmınıda yaz.
+2025-09-24 18:03:45 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🔍 Web'de arıyorum: Android için java programlama dili ile bir ListView örneği oluştur. Layout kısmınıda yaz.
+2025-09-24 18:03:45 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🌐 Starting web search for: Android için java programlama dili ile bir ListView örneği oluştur. Layout kısmınıda yaz.
+2025-09-24 18:03:45 - src.research.simple_web_search - Thread-3 (process_ai_response) - INFO     - 🌐 Simple Web Search System initialized
+2025-09-24 18:03:45 - src.research.simple_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Simple web search for: Android için java programlama dili ile bir ListView örneği oluştur. Layout kısmınıda yaz.
+2025-09-24 18:03:46 - src.research.simple_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ DuckDuckGo search failed: 202
+2025-09-24 18:03:47 - src.research.simple_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ GeeksforGeeks search failed: 500
+2025-09-24 18:03:47 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - WARNING  - ⚠️ No web results found for: Android için java programlama dili ile bir ListView örneği oluştur. Layout kısmınıda yaz.
+2025-09-24 18:07:04 - SeydappAI-Main       - MainThread      - INFO     - 🏁 SeydappAI ModelTrainer session ended
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Application normal exit - starting cleanup...
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Starting comprehensive resource cleanup
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up threads...
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up 0 threads...
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ 0 threads cleaned up
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🎮 GPU memory cleanup...
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🖥️ UI cleanup...
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Resource cleanup completed successfully
+2025-09-24 18:07:04 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Normal exit cleanup completed
+2025-09-24 18:07:04 - SeydappAI-Main       - MainThread      - INFO     - 🧹 Cleaning up logging system...
+2025-09-24 23:08:40 - SeydappAI-Main       - MainThread      - INFO     - 📝 Enhanced thread-safe logging system initialized
+2025-09-24 23:08:40 - SeydappAI-Main       - MainThread      - INFO     - 🔍 System requirements validation...
+2025-09-24 23:08:40 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 23:08:40 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 23:08:40 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 23:08:40 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 23:08:40 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 23:08:40 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 23:08:40 - SeydappAI-Main       - MainThread      - INFO     - ✅ System ready - Enhanced thread-safe logging active
+2025-09-24 23:08:40 - flet                 - MainThread      - INFO     - Assets path configured: /home/burhan/Genel/python_projeler/SeydappAI_ModelTrainer/assets
+2025-09-24 23:08:40 - flet                 - MainThread      - INFO     - Starting up UDS server on /tmp/NwrkyM3W9G
+2025-09-24 23:08:40 - flet                 - MainThread      - INFO     - Flet app has started...
+2025-09-24 23:08:40 - flet                 - MainThread      - INFO     - App URL: /tmp/NwrkyM3W9G
+2025-09-24 23:08:40 - flet_desktop         - MainThread      - INFO     - Starting Flet View app...
+2025-09-24 23:08:40 - flet_desktop         - MainThread      - INFO     - Flet View found in: /home/burhan/.flet/bin/flet-0.28.3
+2025-09-24 23:08:41 - flet                 - MainThread      - INFO     - App session started
+2025-09-24 23:08:41 - AppLifespan          - MainThread      - INFO     - 🚀 Application startup initiated
+2025-09-24 23:08:41 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 23:08:41 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 23:08:41 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 23:08:41 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 23:08:41 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 23:08:41 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 23:08:41 - AppLifespan          - MainThread      - INFO     - ✅ Application startup completed
+2025-09-24 23:08:41 - FletUI               - MainThread      - INFO     - 🎨 Creating UI components...
+2025-09-24 23:08:41 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔍 UltraModernTrainingUI instance created
+2025-09-24 23:08:41 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UltraModernTrainingUI factory completed
+2025-09-24 23:08:41 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔧 Starting enhanced UI component initialization sequence
+2025-09-24 23:08:41 - src.ui.builder.log_system - MainThread      - INFO     - Initialized LogSystem
+2025-09-24 23:08:41 - src.ui.builder.dashboard_cards - MainThread      - INFO     - Intialized DashboardCards - UI components not created yet
+2025-09-24 23:08:41 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 🔧 Creating dashboard UI components
+2025-09-24 23:08:41 - src.ui.builder.dashboard_cards - MainThread      - INFO     - ✅ Dashboard UI components created
+2025-09-24 23:08:41 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 💡 Real-time monitoring hazır - manuel başlatılabilir
+2025-09-24 23:08:41 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🎮 Creating ControlPanel with configuration
+2025-09-24 23:08:41 - src.ui.builder.control_panel - MainThread      - INFO     - 🎮 Initializing ControlPanel with state management
+2025-09-24 23:08:41 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🔧 Initializing ControlPanelBase
+2025-09-24 23:08:41 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ ControlPanelBase initialized
+2025-09-24 23:08:41 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - 🎯 Initializing EventHandlers
+2025-09-24 23:08:41 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - ✅ EventHandlers initialized with thread safety
+2025-09-24 23:08:41 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - 🤖 Initializing AutonomousLearningManager
+2025-09-24 23:08:41 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - ✅ AutonomousLearningManager initialized
+2025-09-24 23:08:41 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - 📊 Initializing ProgressMonitor
+2025-09-24 23:08:41 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - ✅ ProgressMonitor initialized
+2025-09-24 23:08:41 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - 🎯 TrainingCoordinator (Nihai Sürüm) başlatılıyor...
+2025-09-24 23:08:41 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - ✅ TrainingCoordinator başlatıldı.
+2025-09-24 23:08:41 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ ControlPanel initialized with proper state
+2025-09-24 23:08:41 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - 🎨 Creating control panel with factory components
+2025-09-24 23:08:41 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - ✅ Control panel created with event handlers connected
+2025-09-24 23:08:41 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ Controls created with event handlers connected
+2025-09-24 23:08:41 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - 🔧 Creating sidebar UI components
+2025-09-24 23:08:41 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - ✅ Sidebar UI components created
+2025-09-24 23:08:41 - src.ui.builder.main_content - MainThread      - INFO     - Initialized MainContent
+2025-09-24 23:08:41 - src.ui.builder.main_content - MainThread      - INFO     - 🔧 Creating main content UI structure
+2025-09-24 23:08:41 - src.ui.builder.view_manager - MainThread      - INFO     - Initialized ViewManager
+2025-09-24 23:08:41 - src.ui.builder.view_manager - MainThread      - INFO     - 🔧 Creating views from separate modules
+2025-09-24 23:08:41 - src.ui.views.settings_view - MainThread      - INFO     - 🔧 Settings view creation started
+2025-09-24 23:08:41 - src.ui.views.settings_view - MainThread      - INFO     - ✅ Settings view components created successfully
+2025-09-24 23:08:41 - src.ui.builder.view_manager - MainThread      - INFO     - ✅ All views created from separate modules
+2025-09-24 23:08:41 - src.ui.builder.main_content - MainThread      - INFO     - ✅ Main content UI structure created
+2025-09-24 23:08:41 - src.ui.builder.log_system - MainThread      - INFO     - 🔧 Log UI attached to page
+2025-09-24 23:08:41 - src.ui.builder.log_system - MainThread      - INFO     - 📋 Adding 3 queued logs to UI
+2025-09-24 23:08:41 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UI initialization completed successfully
+2025-09-24 23:08:41 - FletUI               - MainThread      - INFO     - ✅ UI successfully loaded
+2025-09-24 23:08:41 - FletUI               - MainThread      - INFO     - ✅ Page setup completed
+2025-09-24 23:08:41 - AppLifespan          - MainThread      - INFO     - 🛑 Application shutdown initiated
+2025-09-24 23:08:41 - AppLifespan          - MainThread      - INFO     - 🧹 Cleaning up application resources...
+2025-09-24 23:08:41 - AppLifespan          - MainThread      - INFO     - ✅ Application shutdown completed
+2025-09-24 23:08:47 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - 🔄 Processing view change request: chat
+2025-09-24 23:08:47 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - ✅ View change completed successfully
+2025-09-24 23:09:22 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - 🧠 Simple RAG Retriever initialized
+2025-09-24 23:09:22 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 📚 Loaded 2 learned knowledge entries
+2025-09-24 23:09:22 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 🧠 Self-Learning System initialized - 2 knowledge entries loaded
+2025-09-24 23:09:22 - src.research.web_search_utils - Thread-3 (process_ai_response) - INFO     - 🔄 WebSearchUtils initialized - using real web search
+2025-09-24 23:09:22 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - ✅ Retrieved context for query: Andoid için java programlama dili ile bir CardView oluştur.
+2025-09-24 23:09:22 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🔍 Web'de arıyorum: Andoid için java programlama dili ile bir CardView oluştur.
+2025-09-24 23:09:22 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🌐 Starting enhanced multi-source web search for: Andoid için java programlama dili ile bir CardView oluştur.
+2025-09-24 23:09:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🌐 Enhanced Web Search System initialized
+2025-09-24 23:09:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Multi-source web search for: Andoid için java programlama dili ile bir CardView oluştur.
+2025-09-24 23:09:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🚀 Starting parallel searches across multiple sources...
+2025-09-24 23:09:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching Stack Overflow: https://stackoverflow.com/search?q=Andoid+i%C3%A7in+java+programlama+dili+ile+bir+CardView+olu%C5%9Ftur.
+2025-09-24 23:09:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching GitHub: https://github.com/search?q=Andoid+i%C3%A7in+java+programlama+dili+ile+bir+CardView+olu%C5%9Ftur.&type=repositories
+2025-09-24 23:09:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching DuckDuckGo: https://duckduckgo.com/html/?q=Andoid+i%C3%A7in+java+programlama+dili+ile+bir+CardView+olu%C5%9Ftur.
+2025-09-24 23:09:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 3 Bing results
+2025-09-24 23:09:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ W3Schools search failed: 404
+2025-09-24 23:09:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 MDN results
+2025-09-24 23:09:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 GitHub results
+2025-09-24 23:09:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ No Stack Overflow search results found in HTML
+2025-09-24 23:09:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ GeeksforGeeks search failed: 500
+2025-09-24 23:09:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ DuckDuckGo search failed: 202
+2025-09-24 23:09:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ Google Scholar search failed: 429
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 alternative source results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 0 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 1 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 2 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 3 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 4 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 5 returned 3 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 6 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 7 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 8 returned 0 results
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🎯 Found 3 unique results from multiple sources
+2025-09-24 23:09:25 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 📊 Top 3 quality scores: [7.3, 7.3, 7.3]
+2025-09-24 23:09:25 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - ✅ Found 3 multi-source web search results
+2025-09-24 23:09:25 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🎯 Quality scores: ['Bing: 7.3', 'Bing: 7.3', 'Bing: 7.3']
+2025-09-24 23:09:25 - src.knowledge.self_learning_system - Thread-4 (learn_async) - INFO     - 💾 Learned knowledge saved: 3 entries
+2025-09-24 23:09:25 - src.knowledge.self_learning_system - Thread-4 (learn_async) - INFO     - 🎓 New knowledge learned - Category: android, Quality: 4.5
+2025-09-24 23:09:25 - src.ui.ai_chat_interface - Thread-4 (learn_async) - INFO     - 🎓 Successfully learned new knowledge. Total: 1
+2025-09-24 23:21:14 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - 🔄 Processing view change request: settings
+2025-09-24 23:21:14 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - ✅ View change completed successfully
+2025-09-24 23:24:08 - SeydappAI-Main       - MainThread      - INFO     - 🏁 SeydappAI ModelTrainer session ended
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Application normal exit - starting cleanup...
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Starting comprehensive resource cleanup
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up threads...
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up 0 threads...
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ 0 threads cleaned up
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🎮 GPU memory cleanup...
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🖥️ UI cleanup...
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Resource cleanup completed successfully
+2025-09-24 23:24:08 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Normal exit cleanup completed
+2025-09-24 23:24:08 - SeydappAI-Main       - MainThread      - INFO     - 🧹 Cleaning up logging system...
+2025-09-24 23:38:09 - SeydappAI-Main       - MainThread      - INFO     - 📝 Enhanced thread-safe logging system initialized
+2025-09-24 23:38:09 - SeydappAI-Main       - MainThread      - INFO     - 🔍 System requirements validation...
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 23:38:09 - SeydappAI-Main       - MainThread      - INFO     - ✅ System ready - Enhanced thread-safe logging active
+2025-09-24 23:38:09 - flet                 - MainThread      - INFO     - Assets path configured: /home/burhan/Genel/python_projeler/SeydappAI_ModelTrainer/assets
+2025-09-24 23:38:09 - flet                 - MainThread      - INFO     - Starting up UDS server on /tmp/f66EUCjgFz
+2025-09-24 23:38:09 - flet                 - MainThread      - INFO     - Flet app has started...
+2025-09-24 23:38:09 - flet                 - MainThread      - INFO     - App URL: /tmp/f66EUCjgFz
+2025-09-24 23:38:09 - flet_desktop         - MainThread      - INFO     - Starting Flet View app...
+2025-09-24 23:38:09 - flet_desktop         - MainThread      - INFO     - Flet View found in: /home/burhan/.flet/bin/flet-0.28.3
+2025-09-24 23:38:09 - flet                 - MainThread      - INFO     - App session started
+2025-09-24 23:38:09 - AppLifespan          - MainThread      - INFO     - 🚀 Application startup initiated
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 23:38:09 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 23:38:09 - AppLifespan          - MainThread      - INFO     - ✅ Application startup completed
+2025-09-24 23:38:09 - FletUI               - MainThread      - INFO     - 🎨 Creating UI components...
+2025-09-24 23:38:09 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔍 UltraModernTrainingUI instance created
+2025-09-24 23:38:09 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UltraModernTrainingUI factory completed
+2025-09-24 23:38:09 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔧 Starting enhanced UI component initialization sequence
+2025-09-24 23:38:09 - src.ui.builder.log_system - MainThread      - INFO     - Initialized LogSystem
+2025-09-24 23:38:09 - src.ui.builder.dashboard_cards - MainThread      - INFO     - Intialized DashboardCards - UI components not created yet
+2025-09-24 23:38:09 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 🔧 Creating dashboard UI components
+2025-09-24 23:38:09 - src.ui.builder.dashboard_cards - MainThread      - INFO     - ✅ Dashboard UI components created
+2025-09-24 23:38:09 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 💡 Real-time monitoring hazır - manuel başlatılabilir
+2025-09-24 23:38:09 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🎮 Creating ControlPanel with configuration
+2025-09-24 23:38:09 - src.ui.builder.control_panel - MainThread      - INFO     - 🎮 Initializing ControlPanel with state management
+2025-09-24 23:38:09 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🔧 Initializing ControlPanelBase
+2025-09-24 23:38:09 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ ControlPanelBase initialized
+2025-09-24 23:38:09 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - 🎯 Initializing EventHandlers
+2025-09-24 23:38:09 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - ✅ EventHandlers initialized with thread safety
+2025-09-24 23:38:09 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - 🤖 Initializing AutonomousLearningManager
+2025-09-24 23:38:09 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - ✅ AutonomousLearningManager initialized
+2025-09-24 23:38:09 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - 📊 Initializing ProgressMonitor
+2025-09-24 23:38:09 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - ✅ ProgressMonitor initialized
+2025-09-24 23:38:09 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - 🎯 TrainingCoordinator (Nihai Sürüm) başlatılıyor...
+2025-09-24 23:38:09 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - ✅ TrainingCoordinator başlatıldı.
+2025-09-24 23:38:09 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ ControlPanel initialized with proper state
+2025-09-24 23:38:09 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - 🎨 Creating control panel with factory components
+2025-09-24 23:38:09 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - ✅ Control panel created with event handlers connected
+2025-09-24 23:38:09 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ Controls created with event handlers connected
+2025-09-24 23:38:09 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - 🔧 Creating sidebar UI components
+2025-09-24 23:38:09 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - ✅ Sidebar UI components created
+2025-09-24 23:38:09 - src.ui.builder.main_content - MainThread      - INFO     - Initialized MainContent
+2025-09-24 23:38:09 - src.ui.builder.main_content - MainThread      - INFO     - 🔧 Creating main content UI structure
+2025-09-24 23:38:09 - src.ui.builder.view_manager - MainThread      - INFO     - Initialized ViewManager
+2025-09-24 23:38:09 - src.ui.builder.view_manager - MainThread      - INFO     - 🔧 Creating views from separate modules
+2025-09-24 23:38:09 - src.ui.views.settings_view - MainThread      - INFO     - 🔧 Settings view creation started
+2025-09-24 23:38:09 - src.ui.views.settings_view - MainThread      - INFO     - ✅ Settings view components created successfully
+2025-09-24 23:38:09 - src.ui.builder.view_manager - MainThread      - INFO     - ✅ All views created from separate modules
+2025-09-24 23:38:09 - src.ui.builder.main_content - MainThread      - INFO     - ✅ Main content UI structure created
+2025-09-24 23:38:09 - src.ui.builder.log_system - MainThread      - INFO     - 🔧 Log UI attached to page
+2025-09-24 23:38:09 - src.ui.builder.log_system - MainThread      - INFO     - 📋 Adding 3 queued logs to UI
+2025-09-24 23:38:09 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UI initialization completed successfully
+2025-09-24 23:38:09 - FletUI               - MainThread      - INFO     - ✅ UI successfully loaded
+2025-09-24 23:38:09 - FletUI               - MainThread      - INFO     - ✅ Page setup completed
+2025-09-24 23:38:09 - AppLifespan          - MainThread      - INFO     - 🛑 Application shutdown initiated
+2025-09-24 23:38:09 - AppLifespan          - MainThread      - INFO     - 🧹 Cleaning up application resources...
+2025-09-24 23:38:09 - AppLifespan          - MainThread      - INFO     - ✅ Application shutdown completed
+2025-09-24 23:38:15 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - 🔄 Processing view change request: chat
+2025-09-24 23:38:15 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - ✅ View change completed successfully
+2025-09-24 23:38:51 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - 📦 ModelLoader 2025 Edition v2025.1.0 - PyTorch 2.7.1+cu118
+2025-09-24 23:38:51 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - 🧠 Simple RAG Retriever initialized
+2025-09-24 23:38:51 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 📚 Loaded 2 learned knowledge entries
+2025-09-24 23:38:51 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 🧠 Self-Learning System initialized - 2 knowledge entries loaded
+2025-09-24 23:38:51 - src.research.web_search_utils - Thread-3 (process_ai_response) - INFO     - 🔄 WebSearchUtils initialized - using real web search
+2025-09-24 23:38:51 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - 🤖 Inference pipeline başlatılıyor... Model yükleniyor...
+2025-09-24 23:38:51 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - 🚀 ModelLoader 2025 Sürümü Başlatılıyor
+2025-09-24 23:38:51 - models.core.gpu_detector - Thread-3 (process_ai_response) - INFO     - 🎮 RTX 3060 family detected: nvidia geforce rtx 3060
+2025-09-24 23:38:51 - models.core.gpu_detector - Thread-3 (process_ai_response) - INFO     - 📊 VRAM: 11.6GB
+2025-09-24 23:38:51 - models.core.device_manager - Thread-3 (process_ai_response) - INFO     - 🔧 RTX 3060 device optimizations applied
+2025-09-24 23:38:51 - models.memory.memory_manager - Thread-3 (process_ai_response) - INFO     - 🔍 Setting up RTX 3060 memory monitoring
+2025-09-24 23:38:51 - models.training.trainer - Thread-3 (process_ai_response) - INFO     - 🎯 RTX3060Trainer initialized - Device: cuda
+2025-09-24 23:38:51 - models.memory.memory_manager - Thread-3 (process_ai_response) - INFO     - 🔍 RTX 3060 memory monitoring started
+2025-09-24 23:38:51 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - ✅ ModelLoader başlatıldı - RTX 3060: True, Cihaz: cuda
+2025-09-24 23:38:51 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - 🔄 Loading model: bigcode/starcoder2-3b
+2025-09-24 23:38:51 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - 🔄 Loading model: bigcode/starcoder2-3b
+2025-09-24 23:38:51 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - 🔧 RTX 3060 detected - quantization enforced
+2025-09-24 23:38:52 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - 🔧 4-bit quantization configured
+2025-09-24 23:38:53 - accelerate.utils.modeling - Thread-3 (process_ai_response) - INFO     - We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2025-09-24 23:39:22 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - ✅ Model loaded successfully on cuda:0
+2025-09-24 23:39:22 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - ✅ Inference pipeline başarıyla kuruldu.
+2025-09-24 23:39:22 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - ✅ Retrieved context for query: Android için java programlama dili ile ve layoutu içerecek şekilde basit bir ListView oluştur.
+2025-09-24 23:39:22 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - Programlama sorusu algılandı. Web'de aranıyor: Android için java programlama dili ile ve layoutu içerecek şekilde basit bir ListView oluştur.
+2025-09-24 23:39:22 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🌐 Gelişmiş web araması başlatılıyor: Android için java programlama dili ile ve layoutu içerecek şekilde basit bir ListView oluştur.
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🌐 Enhanced Web Search System initialized
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Multi-source web search for: Android için java programlama dili ile ve layoutu içerecek şekilde basit bir ListView oluştur.
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🚀 Starting parallel searches across multiple sources...
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching Stack Overflow: https://stackoverflow.com/search?q=Android+i%C3%A7in+java+programlama+dili+ile+ve+layoutu+i%C3%A7erecek+%C5%9Fekilde+basit+bir+ListView+olu%C5%9Ftur.
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching GitHub: https://github.com/search?q=Android+i%C3%A7in+java+programlama+dili+ile+ve+layoutu+i%C3%A7erecek+%C5%9Fekilde+basit+bir+ListView+olu%C5%9Ftur.&type=repositories
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching DuckDuckGo: https://duckduckgo.com/html/?q=Android+i%C3%A7in+java+programlama+dili+ile+ve+layoutu+i%C3%A7erecek+%C5%9Fekilde+basit+bir+ListView+olu%C5%9Ftur.
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 3 Bing results
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 MDN results
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ W3Schools search failed: 404
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ No Stack Overflow search results found in HTML
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 GitHub results
+2025-09-24 23:39:22 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ DuckDuckGo search failed: 202
+2025-09-24 23:39:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ GeeksforGeeks search failed: 500
+2025-09-24 23:39:23 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ Google Scholar search failed: 429
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 alternative source results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 0 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 1 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 2 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 3 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 4 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 5 returned 3 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 6 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 7 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 8 returned 0 results
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🎯 Found 3 unique results from multiple sources
+2025-09-24 23:39:24 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 📊 Top 3 quality scores: [7.8, 7.8, 7.8]
+2025-09-24 23:39:24 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - ✅ 3 kaliteli web sonucu bulundu.
+2025-09-24 23:39:24 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - 🧠 Yapay zekadan cevap üretiliyor...
+2025-09-24 23:40:56 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - ✅ Cevap başarıyla üretildi.
+2025-09-24 23:40:56 - src.knowledge.self_learning_system - Thread-5 (learn_async) - INFO     - 💾 Learned knowledge saved: 3 entries
+2025-09-24 23:40:56 - src.knowledge.self_learning_system - Thread-5 (learn_async) - INFO     - 🎓 New knowledge learned - Category: android, Quality: 4.6
+2025-09-24 23:40:56 - src.ui.ai_chat_interface - Thread-5 (learn_async) - INFO     - 🎓 Successfully learned new knowledge. Total: 1
+2025-09-24 23:42:31 - SeydappAI-Main       - MainThread      - INFO     - 🏁 SeydappAI ModelTrainer session ended
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Application normal exit - starting cleanup...
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Starting comprehensive resource cleanup
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up threads...
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🧹 Cleaning up 0 threads...
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ 0 threads cleaned up
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🎮 GPU memory cleanup...
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🖥️ UI cleanup...
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Resource cleanup completed successfully
+2025-09-24 23:42:31 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ Normal exit cleanup completed
+2025-09-24 23:42:31 - SeydappAI-Main       - MainThread      - INFO     - 🧹 Cleaning up logging system...
+2025-09-24 23:52:01 - SeydappAI-Main       - MainThread      - INFO     - 📝 Enhanced thread-safe logging system initialized
+2025-09-24 23:52:01 - SeydappAI-Main       - MainThread      - INFO     - 🔍 System requirements validation...
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 23:52:01 - SeydappAI-Main       - MainThread      - INFO     - ✅ System ready - Enhanced thread-safe logging active
+2025-09-24 23:52:01 - flet                 - MainThread      - INFO     - Assets path configured: /home/burhan/Genel/python_projeler/SeydappAI_ModelTrainer/assets
+2025-09-24 23:52:01 - flet                 - MainThread      - INFO     - Starting up UDS server on /tmp/QbXQq0UCH1
+2025-09-24 23:52:01 - flet                 - MainThread      - INFO     - Flet app has started...
+2025-09-24 23:52:01 - flet                 - MainThread      - INFO     - App URL: /tmp/QbXQq0UCH1
+2025-09-24 23:52:01 - flet_desktop         - MainThread      - INFO     - Starting Flet View app...
+2025-09-24 23:52:01 - flet_desktop         - MainThread      - INFO     - Flet View found in: /home/burhan/.flet/bin/flet-0.28.3
+2025-09-24 23:52:01 - flet                 - MainThread      - INFO     - App session started
+2025-09-24 23:52:01 - AppLifespan          - MainThread      - INFO     - 🚀 Application startup initiated
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ Python 3.12.10 - Compatible
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - 🔍 Detected Flet version: 0.28.3
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - 🔍 Parsed version: 0.28
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ Flet 0.28.3 - ControlState API compatible
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ ControlState enum available
+2025-09-24 23:52:01 - SystemValidation     - MainThread      - INFO     - ✅ All system requirements met
+2025-09-24 23:52:01 - AppLifespan          - MainThread      - INFO     - ✅ Application startup completed
+2025-09-24 23:52:01 - FletUI               - MainThread      - INFO     - 🎨 Creating UI components...
+2025-09-24 23:52:01 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔍 UltraModernTrainingUI instance created
+2025-09-24 23:52:01 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UltraModernTrainingUI factory completed
+2025-09-24 23:52:01 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🔧 Starting enhanced UI component initialization sequence
+2025-09-24 23:52:01 - src.ui.builder.log_system - MainThread      - INFO     - Initialized LogSystem
+2025-09-24 23:52:01 - src.ui.builder.dashboard_cards - MainThread      - INFO     - Intialized DashboardCards - UI components not created yet
+2025-09-24 23:52:01 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 🔧 Creating dashboard UI components
+2025-09-24 23:52:01 - src.ui.builder.dashboard_cards - MainThread      - INFO     - ✅ Dashboard UI components created
+2025-09-24 23:52:01 - src.ui.builder.dashboard_cards - MainThread      - INFO     - 💡 Real-time monitoring hazır - manuel başlatılabilir
+2025-09-24 23:52:01 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - 🎮 Creating ControlPanel with configuration
+2025-09-24 23:52:01 - src.ui.builder.control_panel - MainThread      - INFO     - 🎮 Initializing ControlPanel with state management
+2025-09-24 23:52:01 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - 🔧 Initializing ControlPanelBase
+2025-09-24 23:52:01 - src.ui.builder.control_panel.control_panel_base - MainThread      - INFO     - ✅ ControlPanelBase initialized
+2025-09-24 23:52:01 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - 🎯 Initializing EventHandlers
+2025-09-24 23:52:01 - src.ui.builder.control_panel.event_handlers - MainThread      - INFO     - ✅ EventHandlers initialized with thread safety
+2025-09-24 23:52:01 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - 🤖 Initializing AutonomousLearningManager
+2025-09-24 23:52:01 - src.ui.builder.control_panel.autonomous_manager - MainThread      - INFO     - ✅ AutonomousLearningManager initialized
+2025-09-24 23:52:01 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - 📊 Initializing ProgressMonitor
+2025-09-24 23:52:01 - src.ui.builder.control_panel.progress_monitor - MainThread      - INFO     - ✅ ProgressMonitor initialized
+2025-09-24 23:52:01 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - 🎯 TrainingCoordinator (Nihai Sürüm) başlatılıyor...
+2025-09-24 23:52:01 - src.ui.builder.control_panel.training_coordinator - MainThread      - INFO     - ✅ TrainingCoordinator başlatıldı.
+2025-09-24 23:52:01 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ ControlPanel initialized with proper state
+2025-09-24 23:52:01 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - 🎨 Creating control panel with factory components
+2025-09-24 23:52:01 - src.ui.builder.control_panel.ui_components - MainThread      - INFO     - ✅ Control panel created with event handlers connected
+2025-09-24 23:52:01 - src.ui.builder.control_panel - MainThread      - INFO     - ✅ Controls created with event handlers connected
+2025-09-24 23:52:01 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - 🔧 Creating sidebar UI components
+2025-09-24 23:52:01 - src.ui.builder.responsive_sidebar - MainThread      - INFO     - ✅ Sidebar UI components created
+2025-09-24 23:52:01 - src.ui.builder.main_content - MainThread      - INFO     - Initialized MainContent
+2025-09-24 23:52:01 - src.ui.builder.main_content - MainThread      - INFO     - 🔧 Creating main content UI structure
+2025-09-24 23:52:01 - src.ui.builder.view_manager - MainThread      - INFO     - Initialized ViewManager
+2025-09-24 23:52:01 - src.ui.builder.view_manager - MainThread      - INFO     - 🔧 Creating views from separate modules
+2025-09-24 23:52:01 - src.ui.views.settings_view - MainThread      - INFO     - 🔧 Settings view creation started
+2025-09-24 23:52:01 - src.ui.views.settings_view - MainThread      - INFO     - ✅ Settings view components created successfully
+2025-09-24 23:52:01 - src.ui.builder.view_manager - MainThread      - INFO     - ✅ All views created from separate modules
+2025-09-24 23:52:01 - src.ui.builder.main_content - MainThread      - INFO     - ✅ Main content UI structure created
+2025-09-24 23:52:01 - src.ui.builder.log_system - MainThread      - INFO     - 🔧 Log UI attached to page
+2025-09-24 23:52:01 - src.ui.builder.log_system - MainThread      - INFO     - 📋 Adding 3 queued logs to UI
+2025-09-24 23:52:01 - src.ui.ultra_modern_training_ui - MainThread      - INFO     - ✅ UI initialization completed successfully
+2025-09-24 23:52:01 - FletUI               - MainThread      - INFO     - ✅ UI successfully loaded
+2025-09-24 23:52:01 - FletUI               - MainThread      - INFO     - ✅ Page setup completed
+2025-09-24 23:52:01 - AppLifespan          - MainThread      - INFO     - 🛑 Application shutdown initiated
+2025-09-24 23:52:01 - AppLifespan          - MainThread      - INFO     - 🧹 Cleaning up application resources...
+2025-09-24 23:52:01 - AppLifespan          - MainThread      - INFO     - ✅ Application shutdown completed
+2025-09-24 23:52:06 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - 🔄 Processing view change request: chat
+2025-09-24 23:52:06 - src.ui.ultra_modern_training_ui - ThreadPoolExecutor-0_0 - INFO     - ✅ View change completed successfully
+2025-09-24 23:52:53 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - 📦 ModelLoader 2025 Edition v2025.1.0 - PyTorch 2.7.1+cu118
+2025-09-24 23:52:53 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - 🧠 Simple RAG Retriever initialized
+2025-09-24 23:52:53 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 📚 Loaded 2 learned knowledge entries
+2025-09-24 23:52:53 - src.knowledge.self_learning_system - Thread-3 (process_ai_response) - INFO     - 🧠 Self-Learning System initialized - 2 knowledge entries loaded
+2025-09-24 23:52:53 - src.research.web_search_utils - Thread-3 (process_ai_response) - INFO     - 🔄 WebSearchUtils initialized - using real web search
+2025-09-24 23:52:53 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - 🤖 Inference pipeline başlatılıyor... Model yükleniyor...
+2025-09-24 23:52:53 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - 🚀 ModelLoader 2025 Sürümü Başlatılıyor
+2025-09-24 23:52:53 - models.core.gpu_detector - Thread-3 (process_ai_response) - INFO     - 🎮 RTX 3060 family detected: nvidia geforce rtx 3060
+2025-09-24 23:52:53 - models.core.gpu_detector - Thread-3 (process_ai_response) - INFO     - 📊 VRAM: 11.6GB
+2025-09-24 23:52:53 - models.core.device_manager - Thread-3 (process_ai_response) - INFO     - 🔧 RTX 3060 device optimizations applied
+2025-09-24 23:52:53 - models.memory.memory_manager - Thread-3 (process_ai_response) - INFO     - 🔍 Setting up RTX 3060 memory monitoring
+2025-09-24 23:52:53 - models.training.trainer - Thread-3 (process_ai_response) - INFO     - 🎯 RTX3060Trainer initialized - Device: cuda
+2025-09-24 23:52:53 - models.memory.memory_manager - Thread-3 (process_ai_response) - INFO     - 🔍 RTX 3060 memory monitoring started
+2025-09-24 23:52:53 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - ✅ ModelLoader başlatıldı - RTX 3060: True, Cihaz: cuda
+2025-09-24 23:52:53 - models.model_loader  - Thread-3 (process_ai_response) - INFO     - 🔄 Loading model: bigcode/starcoder2-3b
+2025-09-24 23:52:53 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - 🔄 Loading model: bigcode/starcoder2-3b
+2025-09-24 23:52:53 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - 🔧 RTX 3060 detected - quantization enforced
+2025-09-24 23:52:54 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - 🔧 4-bit quantization configured
+2025-09-24 23:52:55 - accelerate.utils.modeling - Thread-3 (process_ai_response) - INFO     - We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2025-09-24 23:53:00 - models.loading.base_loader - Thread-3 (process_ai_response) - INFO     - ✅ Model loaded successfully on cuda:0
+2025-09-24 23:53:00 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - ✅ Inference pipeline başarıyla kuruldu.
+2025-09-24 23:53:00 - src.knowledge.rag_retriever - Thread-3 (process_ai_response) - INFO     - ✅ Retrieved context for query: Android için java programlama dili ile layoutu'da içerecek şekilde bir ListView oluştur.
+2025-09-24 23:53:00 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - Programlama sorusu algılandı. Web'de aranıyor: Android için java programlama dili ile layoutu'da içerecek şekilde bir ListView oluştur.
+2025-09-24 23:53:00 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🌐 Gelişmiş web araması başlatılıyor: Android için java programlama dili ile layoutu'da içerecek şekilde bir ListView oluştur.
+2025-09-24 23:53:00 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🌐 Enhanced Web Search System initialized
+2025-09-24 23:53:00 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Multi-source web search for: Android için java programlama dili ile layoutu'da içerecek şekilde bir ListView oluştur.
+2025-09-24 23:53:00 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🚀 Starting parallel searches across multiple sources...
+2025-09-24 23:53:00 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching Stack Overflow: https://stackoverflow.com/search?q=Android+i%C3%A7in+java+programlama+dili+ile+layoutu%27da+i%C3%A7erecek+%C5%9Fekilde+bir+ListView+olu%C5%9Ftur.
+2025-09-24 23:53:00 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching GitHub: https://github.com/search?q=Android+i%C3%A7in+java+programlama+dili+ile+layoutu%27da+i%C3%A7erecek+%C5%9Fekilde+bir+ListView+olu%C5%9Ftur.&type=repositories
+2025-09-24 23:53:00 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🔍 Searching DuckDuckGo: https://duckduckgo.com/html/?q=Android+i%C3%A7in+java+programlama+dili+ile+layoutu%27da+i%C3%A7erecek+%C5%9Fekilde+bir+ListView+olu%C5%9Ftur.
+2025-09-24 23:53:00 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ W3Schools search failed: 404
+2025-09-24 23:53:01 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 3 Bing results
+2025-09-24 23:53:01 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ GeeksforGeeks search failed: 500
+2025-09-24 23:53:01 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 GitHub results
+2025-09-24 23:53:01 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 MDN results
+2025-09-24 23:53:01 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ DuckDuckGo search failed: 202
+2025-09-24 23:53:01 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ No Stack Overflow search results found in HTML
+2025-09-24 23:53:01 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - WARNING  - ⚠️ Google Scholar search failed: 429
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Found 0 alternative source results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 0 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 1 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 2 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 3 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 4 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 5 returned 3 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 6 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 7 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - ✅ Source 8 returned 0 results
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 🎯 Found 3 unique results from multiple sources
+2025-09-24 23:53:02 - src.research.enhanced_web_search - Thread-3 (process_ai_response) - INFO     - 📊 Top 3 quality scores: [7.8, 7.8, 7.8]
+2025-09-24 23:53:02 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - ✅ 3 kaliteli web sonucu bulundu.
+2025-09-24 23:53:02 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - 🧠 Yapay zekadan cevap üretiliyor...
+2025-09-25 00:00:19 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - ✅ Cevap başarıyla üretildi.
+2025-09-25 00:00:19 - src.ui.ai_chat_interface - Thread-3 (process_ai_response) - INFO     - 🤖 AI cevabı kalite kontrolünden geçiriliyor...
+2025-09-25 00:00:19 - models.inference_pipeline - Thread-3 (process_ai_response) - INFO     - 🧠 Yapay zekadan cevap üretiliyor...

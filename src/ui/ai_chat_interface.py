@@ -1,10 +1,14 @@
 # src/ui/ai_chat_interface.py
+import json
+import re
+
 import flet as ft
 import logging
 import threading
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
+from models.inference_pipeline import get_inference_pipeline
 # Import our modules
 from ..knowledge.knowledge_processor import KnowledgeProcessor
 from ..knowledge.rag_retriever import SimpleRAGRetriever, KnowledgeGraphRAG
@@ -26,7 +30,9 @@ class AIChatInterface:
         self.rag_system = SimpleRAGRetriever()  # 🧠 Simple RAG sistemi
         self.self_learning_system = SelfLearningSystem()  # 🧠 Self-learning sistemi
         self.web_search = WebSearchUtils()
-        
+
+        self.inference_pipeline = get_inference_pipeline()
+
         # Learning statistics
         self.learning_enabled = True
         self.total_learned = 0
@@ -252,84 +258,107 @@ class AIChatInterface:
             self.add_ai_message(f"❌ Sorry, I encountered an error: {str(ex)}")
 
     async def get_ai_response(self, user_message: str, model: str = "bigcode/starcoder2-3b") -> str:
-        """✅ Enhanced AI response with self-learning capability and context awareness"""
+        """
+        Gerçek AI kullanarak, öğrenme, RAG ve web araması yetenekleriyle zenginleştirilmiş
+        bir cevap üretir. Mantıksal öncelik sırasına göre çalışır.
+        """
         try:
-            # 🧠 STEP 0: Check for context-dependent questions
-            context_response = self._handle_context_dependent_question(user_message, model)
-            if context_response:
-                return context_response
-            
-            # 🧠 STEP 1: Check if we already learned this topic
-            learned_knowledge = self.self_learning_system.search_learned_knowledge(user_message)
-            if learned_knowledge and self.learning_enabled:
-                logger.info(f"🎯 Using learned knowledge for: {user_message[:50]}...")
-                
-                # Update learning stats
-                self._update_learning_stats()
-                
-                return f"""🧠 **Self-Learning AI Response** | 🤖 **Model: {model}**
+            # ======================================================================
+            # ADIM 1: Kendi Öğrenme Veritabanını (Self-Learning) Kontrol Et
+            # ======================================================================
+            if self.learning_enabled:
+                learned_knowledge = self.self_learning_system.search_learned_knowledge(user_message)
+                if learned_knowledge:
+                    logger.info(f"🎯 Önceden öğrenilmiş bilgi bulundu ve kullanılıyor: {user_message[:50]}...")
+                    self._update_learning_stats()
+                    # Mevcut formatınızı kullanarak cevap döndür
+                    return f"""🧠 **Self-Learning AI Response** | 🤖 **Model: {model}**
 
-**📚 I remember learning about this topic!**
+    **📚 Bu konuyu daha önce öğrenmiştim!**
 
-{learned_knowledge['response']}
+    {learned_knowledge['response']}
 
----
-**🎓 Learning Stats:**
-- **Category:** {learned_knowledge['category']}
-- **Quality Score:** {learned_knowledge['quality_score']:.1f}/10
-- **Times Used:** {learned_knowledge['usage_count']}
-- **Last Updated:** {learned_knowledge.get('updated_at', learned_knowledge['learned_at'])[:10]}
+    ---
+    **🎓 Öğrenme İstatistikleri:**
+    - **Kategori:** {learned_knowledge['category']}
+    - **Kalite Skoru:** {learned_knowledge['quality_score']:.1f}/10
+    - **Kullanım Sayısı:** {learned_knowledge['usage_count']}
+    - **Son Güncelleme:** {learned_knowledge.get('updated_at', learned_knowledge['learned_at'])[:10]}
 
-💡 *This response was generated from my self-learning knowledge base!*"""
+    💡 *Bu cevap kendi öğrenme veri tabanımdan geldi!*"""
 
-            # STEP 2: Try RAG system (already initialized in __init__)
-            # RAG system is already available as SimpleRAGRetriever
-
-            # Try RAG first
+            # ======================================================================
+            # ADIM 2: RAG (Retrieval-Augmented Generation) Sistemini Kontrol Et
+            # ======================================================================
             if self.rag_system:
                 try:
-                    # SimpleRAGRetriever uses retrieve_context method
                     context = self.rag_system.retrieve_context(user_message, top_k=3)
                     if context and "No specific context found" not in context:
-                        return f"""🤖 **Model: {model}**
+                        logger.info(f"🎯 RAG sistemiyle dahili bilgi bulundu: {user_message[:50]}...")
+                        # RAG'dan gelen bilgiyi AI'a vererek daha iyi bir cevap oluşturmasını isteyelim
+                        prompt = f"""Kullanıcının sorusu: '{user_message}'
 
-Based on my autonomous research, here's what I know:
+    Bu soruyu yanıtlamak için aşağıdaki DAHİLİ BİLGİ KAYNAĞINI kullan.
+    Bu bilgiyi temel alarak kullanıcıya açıklayıcı ve net bir cevap ver.
 
-{context}
+    Dahili Bilgi Kaynağı:
+    ---
+    {context}
+    ---
+    """
+                        ai_response = self.inference_pipeline.generate(prompt)
+                        return f"📚 **Dahili Bilgi Tabanı Destekli AI Cevabı** | 🤖 **Model: {model}**\n\n{ai_response}"
 
-Would you like me to provide a specific code example or dive deeper into any aspect?"""
                 except Exception as e:
-                    logger.warning(f"⚠️ RAG query failed: {e}")
+                    logger.warning(f"⚠️ RAG sorgusu sırasında hata oluştu: {e}")
 
-            # STEP 3: Fallback to web search for programming questions
+            # ======================================================================
+            # ADIM 3: Programlama Sorusuysa Web'de Ara ve AI ile Sentezle
+            # ======================================================================
             if self._is_programming_question(user_message):
-                logger.info(f"🔍 Searching web for: {user_message}")
-                web_response, web_content = await self._search_and_respond_with_learning(user_message, model)
-                if web_response:
-                    # 🧠 STEP 4: Learn from this new knowledge
+                logger.info(f"Programlama sorusu algılandı. Web'de aranıyor: {user_message}")
+                search_results, combined_content = await self._search_and_respond_with_learning(user_message, model)
+
+                # Üretici AI için hazırlanan, önceki adımdaki akıllı prompt
+                generation_prompt = f"""GÖREV: Kullanıcının programlama sorusuna cevap ver...
+            ...
+            WEB'DEN GELEN YARDIMCI BİLGİLER (İlgisizse kullanma):
+            ---
+            {combined_content if combined_content else "Web'den ilgili bir bilgi bulunamadı."}
+            ---
+            """
+                # 1. CEVAP ÜRETME
+                ai_response = self.inference_pipeline.generate(generation_prompt)
+
+                # 2. ÜRETİLEN CEVABI DEĞERLENDİRME
+                evaluation = self._evaluate_ai_response(user_message, ai_response)
+
+                # 3. KARAR VERME
+                # Cevabın hem ilgili olması hem de kalite puanının belirli bir eşiğin üzerinde olması gerekir.
+                if evaluation.get("is_relevant") and evaluation.get("correct_technology") and evaluation.get(
+                        "quality_score", 0) >= 5:
+                    logger.info("✅ Üretilen cevap kalite kontrolünü geçti. Kullanıcıya gösterilecek.")
                     if self.learning_enabled:
-                        self._learn_from_interaction(user_message, web_response, web_content)
-                    
-                    return web_response
+                        self._learn_from_interaction(user_message, ai_response, combined_content)
+                    return f"🌐 **Web Destekli AI Cevabı** | 🤖 **Model: {model}**\n\n{ai_response}"
+                else:
+                    logger.warning(
+                        f" üretilen cevap kalite kontrolünü geçemedi. Feedback: {evaluation.get('feedback')}. Web olmadan tekrar deneniyor.")
+                    fallback_prompt = f"""Kullanıcının sorusu: '{user_message}'. Bu soruya kendi bilgine dayanarak, layout dosyası da içeren tam bir Android Java kodu ile cevap ver."""
+                    ai_response = self.inference_pipeline.generate(fallback_prompt)
+                    return f"🧠 **AI (Genel Bilgi) Cevabı** | 🤖 **Model: {model}**\n\n{ai_response}"
 
-            # Default response
-            return f"""🤖 **Model: {model}**
-
-I don't have specific information about that topic in my current knowledge base. 
-
-However, I can help with:
-• Python programming concepts
-• Machine learning techniques  
-• PyTorch optimization
-• Neural network training
-• Transformer fine-tuning
-• Android development (searching web for latest info)
-
-Try asking a more specific question, and I'll search for the most current information!"""
+            # ======================================================================
+            # ADIM 4: Hiçbiri Uygun Değilse, Genel AI Cevabı Üret
+            # ======================================================================
+            logger.info("Genel bilgiye dayalı bir cevap üretiliyor...")
+            prompt = f"""Kullanıcının sorusu: '{user_message}'. Bu soruyu en iyi şekilde, Türkçe olarak yanıtla."""
+            ai_response = self.inference_pipeline.generate(prompt)
+            return f"🤖 **Model: {model}**\n\n{ai_response}"
 
         except Exception as e:
-            logger.error(f"❌ AI response error: {e}")
-            return f"I'm having trouble processing your request right now. Error: {str(e)}"
+            logger.error(f"❌ AI cevabı oluşturulurken ana hata: {e}", exc_info=True)
+            return f"İsteğinizi işlerken bir hata oluştu: {str(e)}"
 
     def _is_programming_question(self, message: str) -> bool:
         """Check if the message is a programming-related question"""
@@ -343,98 +372,160 @@ Try asking a more specific question, and I'll search for the most current inform
         message_lower = message.lower()
         return any(keyword in message_lower for keyword in programming_keywords)
 
-    async def _search_and_respond_with_learning(self, query: str, model: str = "bigcode/starcoder2-3b") -> tuple:
-        """Search web and generate response with learning capability"""
+    def _evaluate_ai_response(self, user_query: str, generated_response: str) -> dict:
+        """
+        Üretilen bir AI cevabının kalitesini ve ilgililiğini, başka bir AI çağrısı
+        ile değerlendirir. Bu, hard-coded if'lerin yerine geçer.
+        """
+        logger.info("🤖 AI cevabı kalite kontrolünden geçiriliyor...")
         try:
-            # Import web search function
-            from src.research.web_search_utils import search_programming_question
-            
-            # Search for programming information
-            search_results = await search_programming_question(query)
-            
-            if search_results and len(search_results) > 0:
-                # Get the best result
-                best_result = search_results[0]
-                web_content = best_result.get('content', '')
-                
-                # Customize response based on user's specific request
-                customized_content = self._customize_response_for_user(query, web_content)
-                
-                response = f"""🤖 **Model: {model}** | 🔍 **Learning New Knowledge:**
+            # Değerlendirici AI için özel bir prompt hazırlıyoruz.
+            # Bu prompt, AI'dan yapısal (JSON) bir cevap vermesini istiyor.
+            eval_prompt = f"""GÖREV: Sen bir Kalite Kontrol Uzmanı AI'sın. Aşağıdaki 'Kullanıcı Sorusu'na karşılık üretilen 'AI Cevabı'nı değerlendir. Değerlendirmeni SADECE JSON formatında ver.
 
-**{best_result.get('title', 'Programming Solution')}**
-
-{customized_content}
-
-**Source:** {best_result.get('url', 'Unknown')}
-
+Kullanıcı Sorusu:
+---
+{user_query}
 ---
 
-💡 **Additional Tips:**
-- This solution is customized based on your specific requirements
-- Always test code examples in your development environment
-- Check official documentation for the latest updates
+AI Cevabı:
+---
+{generated_response}
+---
 
-🧠 **Learning Status:** This knowledge will be saved for future reference!"""
-                
-                return response, web_content
-            
-            return None, ""
-            
+DEĞERLENDİRME KRİTERLERİ VE JSON FORMATI:
+{{
+  "is_relevant": boolean, // Cevap, sorunun ana konusuyla ilgili mi? (true/false)
+  "correct_technology": boolean, // Cevap, soruda istenen programlama dilini/teknolojisini kullanıyor mu? (true/false)
+  "includes_code": boolean, // Cevap bir kod örneği içeriyor mu? (true/false)
+  "quality_score": integer, // 1 (çok kötü) ile 10 (mükemmel) arasında bir kalite puanı ver.
+  "feedback": "string" // Neden bu puanı verdiğini bir cümleyle açıkla.
+}}
+"""
+            # Değerlendirme için AI'ı çağır
+            evaluation_json_str = self.inference_pipeline.generate(eval_prompt)
+
+            # AI'dan gelen string'i JSON olarak parse etmeye çalış
+            # Bazen AI tam JSON formatı vermeyebilir, bu yüzden temizlik gerekebilir.
+            json_match = re.search(r'{.*}', evaluation_json_str, re.DOTALL)
+            if not json_match:
+                logger.warning("Değerlendirici AI, JSON formatında cevap vermedi.")
+                return {"quality_score": 0, "is_relevant": False, "feedback": "Invalid evaluation format"}
+
+            evaluation_data = json.loads(json_match.group(0))
+            logger.info(f"✅ Kalite kontrol sonucu: {evaluation_data}")
+            return evaluation_data
+
+        except json.JSONDecodeError:
+            logger.error("Değerlendirici AI'dan gelen JSON parse edilemedi.")
+            return {"quality_score": 0, "is_relevant": False, "feedback": "JSON parsing error"}
         except Exception as e:
-            logger.error(f"❌ Web search error: {e}")
+            logger.error(f"❌ AI cevabı değerlendirilirken hata oluştu: {e}")
+            return {"quality_score": 0, "is_relevant": False, "feedback": str(e)}
+
+
+    async def _search_and_respond_with_learning(self, query: str, model: str = "bigcode/starcoder2-3b") -> Tuple[
+        Optional[List[Dict]], str]:
+        """Sadece web'de arama yapar ve HAM sonuçları ile birleştirilmiş içeriği döndürür."""
+        try:
+            logger.info(f"🌐 Gelişmiş web araması başlatılıyor: {query}")
+
+            # Zaten harika bir arama sisteminiz var, onu kullanalım
+            from src.research.enhanced_web_search import EnhancedWebSearchSystem
+
+            search_system = EnhancedWebSearchSystem()
+            # asyncio.gather ile çalıştığı için context manager'a gerek yok
+            search_results = await search_system.search_programming_question(query, max_results=3)
+
+            if not search_results:
+                logger.warning(f"⚠️ Web'de sonuç bulunamadı: {query}")
+                return None, ""
+
+            logger.info(f"✅ {len(search_results)} kaliteli web sonucu bulundu.")
+
+            # AI'a gönderilecek birleştirilmiş ve kaliteli içeriği oluştur
+            combined_content = "\n\n---\n\n".join(
+                f"Kaynak: {res.get('source', '')} (Kalite: {res.get('quality_score', 0):.1f}/10)\n"
+                f"Başlık: {res.get('title', '')}\n"
+                f"Özet: {res.get('content', '')}"
+                for res in search_results
+            )
+
+            return search_results, combined_content
+
+        except Exception as e:
+            logger.error(f"❌ Web araması sırasında hata oluştu: {e}", exc_info=True)
             return None, ""
 
     async def _search_and_respond(self, query: str, model: str = "bigcode/starcoder2-3b") -> str:
-        """Search web and generate response"""
+        """Search web and generate response using REAL web search"""
         try:
-            # Import web search function
-            from src.research.web_search_utils import search_programming_question
+            # Use the enhanced web search system for REAL searches
+            from src.research.enhanced_web_search import EnhancedWebSearchSystem
             
-            # Search for programming information
-            search_results = await search_programming_question(query)
+            search_system = EnhancedWebSearchSystem()
+            
+            # Perform REAL web search
+            search_results = await search_system.search_programming_question(query, max_results=3)
             
             if search_results and len(search_results) > 0:
+                logger.info(f"✅ Found {len(search_results)} REAL web search results")
+                
                 # Get the best result
                 best_result = search_results[0]
                 
-                # Customize response based on user's specific request
-                customized_content = self._customize_response_for_user(query, best_result.get('content', ''))
+                # Extract real content and source
+                real_content = best_result.get('content', '')
+                real_source = best_result.get('url', 'Unknown')
+                real_title = best_result.get('title', 'Programming Solution')
                 
-                response = f"""🤖 **Model: {model}** | 🔍 **Customized Programming Solution:**
+                # Create response with REAL web content
+                response = f"""🤖 **Model: {model}** | 🌐 **Gerçek Web Araması Sonuçları:**
 
-**{best_result.get('title', 'Programming Solution')}**
+**{real_title}**
 
-{customized_content}
+{real_content}
 
-**Source:** {best_result.get('url', 'Unknown')}
+**Kaynak:** {real_source}
 
 ---
 
-💡 **Additional Tips:**
-- This solution is customized based on your specific requirements
-- Always test code examples in your development environment
-- Check official documentation for the latest updates
+🔍 **Arama Detayları:**
+- {len(search_results)} gerçek web kaynağından sonuç bulundu
+- Stack Overflow, GitHub ve diğer güvenilir kaynaklardan
+- Güncel ve doğrulanmış bilgiler
 
-Would you like me to explain any part in more detail?"""
+💡 **Ek Bilgiler:**
+- Bu çözüm gerçek web kaynaklarından alınmıştır
+- Kodu test etmeden önce gereksinimlerinizi kontrol edin
+- Resmi dokümantasyonu da incelemenizi öneririm
+
+Başka bir konuda yardım ister misiniz?"""
                 
                 return response
             else:
-                return f"""🤖 **Model: {model}** | 🔍 I searched the web for "{query}" but couldn't find specific results right now.
+                logger.warning(f"⚠️ No REAL web results found for: {query}")
+                return f"""🤖 **Model: {model}** | 🔍 Web araması yapıldı ancak "{query}" için spesifik sonuç bulunamadı.
 
-Let me provide some general guidance:
+Bu durumda:
+1. Sorunuzu daha spesifik hale getirmeyi deneyin
+2. Farklı anahtar kelimeler kullanın
+3. İngilizce terimler eklemeyi deneyin
 
-For Android ListView with Java:
-1. Create XML layout with ListView
-2. Create custom adapter
-3. Bind adapter to ListView
-4. Handle item clicks
+Örnek: "Android Java CardView custom layout tutorial"
 
-Would you like me to search for a more specific aspect of this topic?"""
+Tekrar denemek ister misiniz?"""
                 
         except Exception as e:
-            logger.error(f"❌ Web search error: {e}")
-            return f"I tried to search for current information but encountered an error: {str(e)}"
+            logger.error(f"❌ REAL web search error: {e}")
+            return f"""🤖 **Model: {model}** | ❌ Web araması sırasında hata oluştu: {str(e)}
+
+Bu genellikle şu nedenlerle olabilir:
+- İnternet bağlantısı sorunu
+- Arama servislerinin geçici olarak erişilemez olması
+- Rate limiting (çok fazla istek)
+
+Lütfen birkaç dakika sonra tekrar deneyin."""
 
     def _customize_response_for_user(self, user_query: str, web_content: str) -> str:
         """Customize web search results based on user's specific requirements"""
